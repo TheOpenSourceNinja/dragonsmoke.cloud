@@ -12,4 +12,7 @@ Thumbs.db
 
 # only XCF images allowed (they're 'source code' for PNGs)
 images/*
+!images/header buttons/
 !images/*.xcf
+images/header buttons/*
+!images/header buttons/*.xcf
