@@ -1,0 +1,5 @@
+-=-=- FREE USENET SERVERS -=-=-
+
+* Eternal September ( web: https://www.eternal-september.org ) requires registration. Provides access to text newsgroups only, such as alt.fan.dragons. Supports encrypted or unencrypted connections.
+
+* Google Groups ( web: https://groups.google.com/forum/#!forum/alt.fan.dragons ) requires a Google account. It also does not work with standard Usenet client software; you have to use Google's inferior web interface. On the plus side, it gives you access to every post ever made to the newsgroup whereas some other servers delete older messages.

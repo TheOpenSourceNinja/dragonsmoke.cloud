@@ -1,0 +1,15 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Let's Encrypt
+.well-known/acme-challenge/
+
+# only XCF images allowed (they're 'source code' for PNGs)
+images/*
+!images/*.xcf
