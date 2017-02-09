@@ -16,3 +16,6 @@ images/*
 !images/*.xcf
 images/header buttons/*
 !images/header buttons/*.xcf
+
+# Fonts. They're open source, but there's no point in duplicating them in our repo when you can get them from official sources.
+fonts/*
