@@ -205,7 +205,7 @@ main {
 }
 
 body {
-	background-image: url("images/dragon scale background.png");
+	background-image: url("images/DragonScaleBackground.png");
 	background-color: #000200; /*Shrink the background image to one pixel in GIMP. This is the resulting color. Try to remember to update this if the background image is changed.*/
 	font-family: "Comic Neue", "Comic Neue Angular", FantasqueSans, FreeSans, "Liberation Sans", sans-serif;
 	/* Enable a font's kerning: http://stackoverflow.com/questions/15160897/font-feature-settings-what-is-the-correct-syntax */
@@ -237,7 +237,7 @@ footer {
 }
 
 #body-including-header-and-footer {
-	background-image: url("images/main body background.png");
+	background-image: url("images/MainBodyBackground.png");
 	background-color: #ffefe1; /*Shrink the background image to one pixel in GIMP. This is the resulting color. Try to remember to update this if the background image is changed.*/
 	width: 90%;
 	margin: auto;

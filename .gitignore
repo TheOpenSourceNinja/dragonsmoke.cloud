@@ -12,10 +12,10 @@ Thumbs.db
 
 # only XCF images allowed (they're 'source code' for PNGs)
 images/*
-!images/header buttons/
+!images/HeaderButtons/
 !images/*.xcf
-images/header buttons/*
-!images/header buttons/*.xcf
+images/HeaderButtons/*
+!images/HeaderButtons/*.xcf
 
 # Fonts. They're open source, but there's no point in duplicating them in our repo when you can get them from official sources.
 fonts/*
