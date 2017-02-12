@@ -167,6 +167,12 @@
    END OF FONT STACK
    ========================================================================== */
 
+blockquote {
+	background-color: rgba( 100, 100, 100, .1);
+	font-family: "Comic Neue Angular", "Comic Neue", FantasqueSans, FreeSans, "Liberation Sans", sans-serif; /*Switched Comic Neue and Comic Neue Angular relative to other text, just to make quotes look a little different.*/
+	font-style: italic;
+}
+
 a {
 	color: orangered;
 }
@@ -184,7 +190,7 @@ a {
 	border-bottom-style: solid;
 }
 
-#main-body {
+main {
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border-bottom-width: 5px;
@@ -210,6 +216,7 @@ body {
 
 code {
 	font-family: Hack, monospace;
+	font-size: smaller;
 }
 
 footer {
@@ -241,5 +248,5 @@ footer {
 }
 
 h2 {
-	
+	font-size: large;
 }
