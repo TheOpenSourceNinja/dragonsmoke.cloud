@@ -247,6 +247,11 @@ footer {
 	border-style: solid;
 }
 
-h2 {
+/*h2 {
 	font-size: large;
+}*/
+
+aside {
+	float: right;
+	width: 50%;
 }
