@@ -32,6 +32,29 @@
 									<details>
 										<summary>Species</summary>
 										<ul>
+											<li>
+												<a href="#DragonCodeSpeciesTag">Info about this tag</a>
+											</li>
+											<li><a href="#DragonCodeSpeciesAmphibians">Amphibians (A)</a></li>
+											<li><a href="#DragonCodeSpeciesBirds">Birds (B)</a></li>
+											<li>Crustaceans (C)</li>
+											<li>Dragons (D)</li>
+											<li>Extra-Terrestrials (E)</li>
+											<li>Fish (F)</li>
+											<li>Humanoids (H)</li>
+											<li>Insects (I)</li>
+											<li>Legendary (L)</li>
+											<li>Mammals (M)</li>
+											<li>Modifiers</li>
+											<li>Molluscs (O)</li>
+											<li>Mythical (Y)</li>
+											<li>Other/Unknown (?)</li>
+											<li>Plants (P)</li>
+											<li>Reptiles (R)</li>
+											<li>Saurians (S)</li>
+											<li>Shape Changers (~)</li>
+											<li>Spirits (Q)</li>
+											<li>Undead (U)</li>
 										</ul>
 									</details>
 								</li>
@@ -74,17 +97,73 @@
 				</ul>
 			</nav>
 			
-			<article id="DragonCodeIntroduction">
-				<h4>Introduction</h4>
+			<article id="DragonCodeIntroduction" class="DragonCodeArticle">
+				<h4>Introduction and Miscellaneous Doubleplusimportant Details</h4>
 				<p>Tags are listed in this document in alphabetical order, except for the "DC2." tag which identifies the version of the Dragon Code in use, and the Species tag. I don't think order is important when reading/writing Dragon Codes except that the version identifier must come first and must be immediately followed by the Species tag if the Species tag is present.</p>
 				
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at nulla eu mauris semper feugiat quis at nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat purus neque, vitae consectetur velit finibus vel. Donec vestibulum tellus enim, nec consectetur magna fermentum vel. In finibus congue faucibus. In vitae condimentum dui. Nulla facilisi. Vestibulum dui velit, tempor sodales tincidunt ut, vestibulum a justo. Fusce nisl sapien, imperdiet sit amet sollicitudin nec, tempor non turpis.</p>
+				<p>Every tag is optional except for the version identifier. Readers have to know what code this is, after all.</p>
 			</article>
 			
-			<article id="DragonCodeVersion">
+			<article id="DragonCodeVersion" class="DragonCodeArticle">
 				<h4>Dragon Code Version Identifier</h4>
 				<p>The first 2 letters, DC, indicate that this is the Dragon Code. They are followed by a number - 2 in this case, since this is the second version - and then a period (.)</p>
+				<p>The version identifier is mandatory.</p>
 			</article>
+			
+			<article id="DragonCodeSpeciesTag" class="DragonCodeArticle">
+				<h4>The Species Tag</h4>
+				<p>The Species tag, if present, must immediately follow the "DC2.". Thus the tag itself does not need to be identified with any letters, unlike other tags.</p>
+				<p>As with all tags, Species is not mandatory. If you don't include it, however, then you must put a space (<a href="https://codepoints.net/U+0020" target="_blank">U+0020 SPACE</a>) after the "DC2." to separate it from other tags.</p>
+				<p>It is worth noting that, although this is called the <em>Dragon</em> Code, there are a number of other species included too. If your species is not listed, you can write it out in "double quotes" (either two of <a href="https://codepoints.net/U+0022" target="_blank">U+0022 QUOTATION MARK</a> or one each of <a href="https://codepoints.net/U+201C" target="_blank">U+201C LEFT DOUBLE QUOTATION MARK</a> and <a href="https://codepoints.net/U+201D" target="_blank">U+201D RIGHT DOUBLE QUOTATION MARK</a>). If your species fits into a general group, put the group first followed by the species in "double quotes". For example, if you had a draconic species called "Mckdle" (those are just some random letters I typed; don't try to pronounce it!), then your Species tag would look like <pre>D"Mckdle"</pre></p>
+				
+				<article id="DragonCodeSpeciesAmphibians" class="DragonCodeArticle">
+					<h5>Amphibians (A)</h5>
+					<p>
+						Wiktionary defines the word amphibian as
+						<blockquote cite="https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943">
+							<ol>
+								<li>An animal of the Amphibia; any four-legged vertebrate that does not have amniotic eggs, living both on land and in water.</li>
+								<li>A vehicle which can operate on land and water. See Wikipedia article on "Amphibious aircraft"</li>
+							</ol>
+							<details>
+								<summary>citation</summary>
+								amphibian. (2016, December 30). Wiktionary, The Free Dictionary. Retrieved 09:12, February 18, 2017 from <a href="https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943" target="_blank">https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943</a>.
+							</details>
+						</blockquote>
+						While one certainly could consider certain species as vehicles (horse riding is a thing, after all), for the purpose of the Dragon Code we tend to use the first definition.
+					</p>
+					<ul>
+						<li>A lone capital A indicates <em>"I'm an amphibian and I'm not telling you what kind"</em>.</li>
+						<li>
+							<ul>
+								<li>(proposed addition) c	Caecilians - Ac</li>
+								<li>f Frogs - Af</li>
+								<li>n Newts - An</li>
+								<li>s Salamanders - As</li>
+								<li>t Toads - At</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+				
+				<article id="DragonCodeSpeciesBirds" class="DragonCodeArticle">
+					<h5>Birds</h5>
+					<p>Look! Up in the sky! It's one of those feathery things that sits in a tree and beeps at you!</p>
+					<ul>
+						<li>A lone capital B indicates <em>"I'm an animal of the feathered avian variety and that's all you need to know"</em>.</li>
+						<li>
+							<ul>
+								<li>c Crows - Bc</li>
+								<li>e Eagles - Be</li>
+								<li>h Hawks - Bh</li>
+								<li>p Phoenix - Bp</li>
+								<li>r Ravens - Br</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+				
+			</article> <!--id="DragonCodeSpeciesTag"-->
 			
 		</section>
 		
