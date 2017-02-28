@@ -108,11 +108,12 @@
 				<h4>Dragon Code Version Identifier</h4>
 				<p>The first 2 letters, <code>DC</code>, indicate that this is the Dragon Code. They are followed by a number - <code>2</code> in this case, since this is the second version - and then a period (<code>.</code>)</p>
 				<p>The version identifier is mandatory.</p>
+				<p>The original DragonCode documentation treats this as part of the Species tag, but I think it makes more sense to think of this as a separate tag that immediately precedes the Species tag.</p>
 			</article>
 			
 			<article id="DragonCodeSpeciesTag" class="DragonCodeArticle">
 				<h4>The Species Tag</h4>
-				<p>The Species tag, if present, must immediately follow the "<code>DC2.</code>". Thus the tag itself does not need to be identified with any letters, unlike other tags.</p>
+				<p>The Species tag, if present, must immediately follow the "<code>DC2.</code>". Thus the tag itself does not need to be identified with any letters, unlike other tags. (The original DragonCode documentation treats the Version Identifier as part of the Species tag and says that the Species tag must start with the Version Identifier. I think it makes more sense to consider these as separate tags.)</p>
 				<p>As with all tags, Species is not mandatory. If you don't include it, however, then you must put a space (<a href="https://codepoints.net/U+0020" target="_blank">U+0020 SPACE</a>) after the "<code>DC2.</code>" to separate it from other tags.</p>
 				<p>It is worth noting that, although this is called the <em>Dragon</em> Code, there are a number of other species included too. If your species is not listed, you can write it out in <code>"double quotes"</code> (either two of <a href="https://codepoints.net/U+0022" target="_blank">U+0022 QUOTATION MARK</a> or one each of <a href="https://codepoints.net/U+201C" target="_blank">U+201C LEFT DOUBLE QUOTATION MARK</a> and <a href="https://codepoints.net/U+201D" target="_blank">U+201D RIGHT DOUBLE QUOTATION MARK</a>). If your species fits into a general group, put the group first followed by the species in <code>"double quotes"</code>. For example, if you had a draconic species called "Mckdle" (those are just some random letters I typed; don't try to pronounce it!), then your Species tag would look like <code>D"Mckdle"</code></p>
 				
