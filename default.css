@@ -168,7 +168,7 @@
    ========================================================================== */
 
 blockquote {
-	background-color: rgba( 100, 100, 100, .1);
+	background-color: rgba( 100, 100, 100, .1 );
 	font-family: "Comic Neue Angular", "Comic Neue", FantasqueSans, FreeSans, "Liberation Sans", sans-serif; /*Switched Comic Neue and Comic Neue Angular relative to other text, just to make quotes look a little different.*/
 	font-style: italic;
 	background-image: url( 'images/topLeftQuote.png' ), url( 'images/bottomRightQuote.png' );
@@ -283,7 +283,7 @@ aside {
 }
 
 .ProposedDragonCodeChange {
-	color: red;
+	color: DarkRed; /*Made this dark to contrast with the light background color. For accessibility.*/
 	font-style: italic;
 }
 
