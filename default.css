@@ -180,7 +180,12 @@ blockquote {
 }
 
 a {
-	color: orangered;
+	color: DarkGreen;
+	transition: color 1s;
+}
+
+a:hover, a:active {
+	color: OrangeRed;
 }
 
 .nav-header-image {
