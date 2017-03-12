@@ -55,32 +55,32 @@
 										</ul>
 									</details>
 								</li>
-								<li><a href="#DragonCodeActivityIndexTag">Activity Index (<code>Ac</code>)</a></li>
+								<li><a href="#DragonCodeActivityIndexTag">ACtivity Index (<code>Ac</code>)</a></li>
 								<li><a href="#DragonCodeAgeTag">Age (<code>A</code>)</a></li>
-								<li>Appendages (<code>P</code>)</li>
-								<li>Breath Weapon (<code>B</code>)</li>
+								<li><a href="#DragonCodeActivityIndexTag">aPpendages (<code>P</code>)</a></li>
+								<li>Breath weapon (<code>B</code>)</li>
 								<li>Color(s) (<code>C</code>)</li>
 								<li>Dragon Friendliness (<code>Df</code>)</li>
-								<li>Emotionality/Huggability (<code>E</code>)</li>
+								<li>Emotionality/huggability (<code>E</code>)</li>
 								<li>Food (<code>F</code>)</li>
-								<li>Fruitiness (<code>Fr</code>)</li>
+								<li>FRuitiness (<code>Fr</code>)</li>
 								<li>Gender (<code>G</code>)</li>
-								<li>Hoard Size (<code>H</code>)</li>
+								<li>Hoard size (<code>H</code>)</li>
 								<li>Irritability (<code>I</code>)</li>
 								<li>Joviality (<code>J</code>)</li>
 								<li>Length (<code>L</code>)</li>
-								<li>Mating Status (<code>M</code>)</li>
-								<li>Monetary Philosophy (<code>$</code>)</li>
-								<li>Native Land (<code>N</code>)</li>
+								<li>Mating status (<code>M</code>)</li>
+								<li>monetary philosophy (<code>$</code>)</li>
+								<li>Native land (<code>N</code>)</li>
 								<li>Offspring (<code>O</code>)</li>
-								<li>Psychic Ability (<code>Q</code>)</li>
-								<li>Reality Index (<code>R</code>)</li>
-								<li>Skin Type (<code>Sk</code>)</li>
-								<li>Social Life (<code>S</code>)</li>
-								<li>Technology (<code>Tc</code>)</li>
+								<li>psychic ability (<code>Q</code>)</li>
+								<li>Reality index (<code>R</code>)</li>
+								<li>SKin type (<code>Sk</code>)</li>
+								<li>Social life (<code>S</code>)</li>
+								<li>TeChnology (<code>Tc</code>)</li>
 								<li>Ubiquity (<code>U</code>)</li>
-								<li>Voodoo/Magical Ability (<code>V</code>)</li>
-								<li><a href="#DragonCodeWeightTonnageTag">Weight/Tonnage (<code>T</code>)</a></li>
+								<li>Voodoo/magical ability (<code>V</code>)</li>
+								<li><a href="#DragonCodeWeightTonnageTag">weight/Tonnage (<code>T</code>)</a></li>
 								<li>Width (<code>W</code>)</li>
 							</ul>
 						</details>
@@ -154,7 +154,7 @@
 								</ul>
 							</p>
 							
-							<p><span class="ProposedDragonCodeChange">(proposed clarification):</span> In <a href="https://web.archive.org/web/20030225022922fw_/http://www.wyrm.org.uk/dc/species.html#Miscellaneous" target="_blank">Baxil's DragonCode documentation</a>, it is noted that "you can also have more than two species crossed by adding on more <code>+</code>s!". To make matters simpler for computer programmers, I choose to interpret this like so: <code>Dw+De+Dp</code> is the same as <code>Dw+(De+Dp)</code>, meaning that an eastern and a Pernese dragon had offspring, which then mated with a western dragon to produce you. See the proposed use of parentheses and the note on recursion, both below.</p>
+							<p><span class="ProposedDragonCodeChange">(proposed clarification):</span> In <a href="http://www.wyrm.org.uk/dc/species.html#Miscellaneous" target="_blank">Wyrm's official DragonCode documentation</a>, it is noted that "you can also have more than two species crossed by adding on more <code>+</code>s!". To make matters simpler for computer programmers, I choose to interpret this like so: <code>Dw+De+Dp</code> is the same as <code>Dw+(De+Dp)</code>, meaning that an eastern and a Pernese dragon had offspring, which then mated with a western dragon to produce you. See the proposed use of parentheses and the note on recursion, both below.</p>
 						</li>
 						
 						<li>
@@ -624,13 +624,43 @@
 					<li><code>A---!</code> Not even hatched yet!</li>
 					<li><code>A?</code> No idea. Not all cultures bother to measure age.</li>
 				</ul>
-				<p>Modifiers:
-					<ul>
-						<li><code>r</code> Indicates that this Age tag specifies your Real Life age. Put this after the <code>A</code>, e.g. <code>Ar+++!</code> means you are truly ancient.</li>
-						<li><code>v</code> Indicates that this Age tag specifies your Virtual Life age. Put this after the <code>A</code>, e.g. <code>Av---</code> means that your online self is very young.</li>
-						<li><code>()</code> While you may choose to put your Real Life and Virtual Life ages as separate tags, you can also group them into a single Age tag using parentheses: <code>A(r-v+)</code>, for example, indicates that your Real Life self is a young adult while your virtual self is a bit older. This is equivalent to <code>Ar- Av+</code>.
-					</ul>
-				</p>
+				<h5>Modifiers:</h5>
+				<ul>
+					<li><code>r</code> Indicates that this Age tag specifies your Real Life age. Put this after the <code>A</code>, e.g. <code>Ar+++!</code> means you are truly ancient.</li>
+					<li><code>v</code> Indicates that this Age tag specifies your Virtual Life age. Put this after the <code>A</code>, e.g. <code>Av---</code> means that your online self is very young.</li>
+					<li><code>()</code> While you may choose to put your Real Life and Virtual Life ages as separate tags, you can also group them into a single Age tag using parentheses: <code>A(r-v+)</code>, for example, indicates that your Real Life self is a young adult while your virtual self is a bit older. This is equivalent to <code>Ar- Av+</code>.
+				</ul>
+			</article>
+			
+			<article id="DragonCodeAppendagesTag" class="DragonCodeArticle">
+				<h4>aPpendages</h4>
+				<p>This tag specifies how many and what types of limbs you have. As with all tags, you can choose not to include this tag if you have the 'normal' set of appendages. Note that most of these appendages come in pairs; see the modifiers below if you want to specify an unusual number of them.</p>
+				<ul>
+					<li><code>a</code> a pair of Arms - <code>Pa</code></li>
+					<li><code>f</code> a pair of Fore-limbs (limbs that can be used as either arms or legs) - <code>Pf</code></li>
+					<li><code>h</code> a Head - <code>Ph</code></li>
+					<li><code>k</code> a crest; may or may not be head ornamentation. - <code>Pk</code></li>
+					<li><code>l</code> a pair of Legs - <code>Pl</code></li>
+					<li><code>p</code> a pair of Paddles, flukes, fins, etc. - <code>Pp</code></li>
+					<li><code>t</code> a Tail - <code>Pt</code></li>
+					<li><code>v</code> a pair of spines or horns on the head - <code>Pv</code></li>
+					<li><code>w</code> a pair of Wings - <code>Pw</code>
+						<ul>
+							<li><code>'</code> a pair of Wings that also act as arms and/or legs - <code>Pw'</code></li>
+						</ul>
+					</li>
+				</ul>
+				<h5>Modifiers:</h5>
+				<ul>
+					<li><code>^</code> means the appendage has a webbed hand or foot.</li>
+					<li><code>+</code> One more than normal.</li>
+					<li><code>-</code> One less than normal.</li>
+					<li><code>!</code> Many. An unspecified large number.</li>
+					<li><code>number</code> Multiplier. You have this many times the amount (pair or single) specified above.</li>
+					<li><code>~</code> Variable. You grow limbs as needed.</li>
+				</ul>
+				
+				<p>You can combine as many of the above options as you want. E.g. an octopus with a missing leg would use the tag <code>Pl3l-</code>: <code>l3</code> means you have 3 pairs of legs, and <code>l-</code> means add another pair but subtract 1, bringing the total number of legs to 7. A common western dragon might use the tag <code>Phfwlt</code>, indicating that they have a head, a pair of forelimbs, a pair of wings, a pair of legs, and a tail. Or said dragon might not include this tag at all since that is a very common set of limbs for dragons.</p>
 			</article>
 			
 			<article id="DragonCodeSoftware" class="DragonCodeArticle">
