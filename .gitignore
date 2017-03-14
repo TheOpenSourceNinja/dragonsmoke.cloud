@@ -19,3 +19,6 @@ images/HeaderButtons/*
 
 # Fonts. They're open source, but there's no point in duplicating them in our repo when you can get them from official sources.
 fonts/*
+
+# Site verification
+a486026684f88d49821643b8a1c78e015f43185c.html
