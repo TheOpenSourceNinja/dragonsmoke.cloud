@@ -6,18 +6,18 @@
 	<body>
 		<!--# include file="header.html" -->
 		<main>
-			<section aria-label="joke">
+			<section aria-label="joke" class="DragonCodeSection">
 				<h2>So, what exactly is this Dragon Code thing anyway? Is it like a code of ethics?</h2>
 				<blockquote>A knight is sworn to valor. His heart knows only virtue. His blade defends the helpless. His might upholds the weak. His word speaks only truth. His wroth undoes the wicked.</blockquote>
 				<p>Wait a minute. Scratch that. Forget I quoted that. That's the Old Code, a code of honor from the Dragonheart movie trilogy. You should totally watch those movies if you haven't, or even if you have 'cause they're that good. The Dragon Code is completely unrelated.</p>
 			</section>
 			
-			<section aria-label="serious part">
+			<section aria-label="serious part" class="DragonCodeSection">
 				<h2>Ha ha, very funny. Now tell me about the real Dragon Code.</h2>
 				<p>Until I get around to finishing this section of dragonsmoke.cloud, I suggest you explore <a href="http://www.wyrm.org.uk/dc/">Wyrm's</a> official Dragon Code documentation. That's where I'm getting everything I know; I'm simply putting some effort into rewriting it in my own words to avoid any plagiarism or copyright infringement. My main reason, though, for rewriting all this is because I intend to write my own DC interpreter software, so I want to understand the DC in detail.</p>
 			</section>
 			
-			<section id="actualDragonCode" aria-label="Actual Dragon Code">
+			<section id="actualDocumentation" aria-label="actual documentation" class="DragonCodeSection">
 				<nav id="DragonCodeTOC" aria-label="Table Of Contents">
 					<h3>Table of Contents</h3>
 					<ul>
@@ -59,7 +59,7 @@
 									<li><a href="#DragonCodeActivityIndexTag">ACtivity Index (<code>Ac</code>)</a></li>
 									<li><a href="#DragonCodeAgeTag">Age (<code>A</code>)</a></li>
 									<li><a href="#DragonCodeAppendagesTag">aPpendages (<code>P</code>)</a></li>
-									<li>Breath weapon (<code>B</code>)</li>
+									<li><a href="#DragonCodeBreathWeaponTag">Breath weapon (<code>B</code>)</a></li>
 									<li>Color(s) (<code>C</code>)</li>
 									<li>Dragon Friendliness (<code>Df</code>)</li>
 									<li>Emotionality/huggability (<code>E</code>)</li>
@@ -95,588 +95,620 @@
 					</ul>
 				</nav>
 				
-				<article id="DragonCodeIntroduction" class="DragonCodeArticle">
-					<h4>Introduction and Miscellaneous Doubleplusimportant Details</h4>
-					<p>Tags are listed in this document in alphabetical order, except for the "<code>DC2.</code>" tag which identifies the version of the Dragon Code in use, and the Species tag. I don't think order is important when reading/writing Dragon Codes except that the version identifier must come first and must be immediately followed by the Species tag if the Species tag is present.</p>
+				<section id="actualDragonCode" class="DragonCodeSection">
+					<article id="DragonCodeIntroduction" class="DragonCodeArticle">
+						<h4>Introduction and Miscellaneous Doubleplusimportant Details</h4>
+						<p>Tags are listed in this document in alphabetical order, except for the "<code>DC2.</code>" tag which identifies the version of the Dragon Code in use, and the Species tag. I don't think order is important when reading/writing Dragon Codes except that the version identifier must come first and must be immediately followed by the Species tag if the Species tag is present.</p>
+						
+						<p>Every tag is optional except for the version identifier. Readers have to know what code this is, after all.</p>
+						
+						<p>As I'm creating this page, I'm noticing things that I think should be changed. My proposed changes are marked <span class="ProposedDragonCodeChange">(proposed)</span>. I don't think these changes will be enough to warrant creating a version 3 of the Dragon Code, but they may break compatibility with existing software written for version 2.</p>
+					</article>
 					
-					<p>Every tag is optional except for the version identifier. Readers have to know what code this is, after all.</p>
+					<article id="DragonCodeVersion" class="DragonCodeArticle">
+						<h4>Dragon Code Version Identifier</h4>
+						<p>The first 2 letters, <code>DC</code>, indicate that this is the Dragon Code. They are followed by a number - <code>2</code> in this case, since this is the second version - and then a period (<code>.</code>)</p>
+						<p>The version identifier is mandatory.</p>
+						<p>The original DragonCode documentation treats this as part of the Species tag, but I think it makes more sense to think of this as a separate tag that immediately precedes the Species tag.</p>
+					</article>
 					
-					<p>As I'm creating this page, I'm noticing things that I think should be changed. My proposed changes are marked <span class="ProposedDragonCodeChange">(proposed)</span>. I don't think these changes will be enough to warrant creating a version 3 of the Dragon Code, but they may break compatibility with existing software written for version 2.</p>
-				</article>
-				
-				<article id="DragonCodeVersion" class="DragonCodeArticle">
-					<h4>Dragon Code Version Identifier</h4>
-					<p>The first 2 letters, <code>DC</code>, indicate that this is the Dragon Code. They are followed by a number - <code>2</code> in this case, since this is the second version - and then a period (<code>.</code>)</p>
-					<p>The version identifier is mandatory.</p>
-					<p>The original DragonCode documentation treats this as part of the Species tag, but I think it makes more sense to think of this as a separate tag that immediately precedes the Species tag.</p>
-				</article>
-				
-				<article id="DragonCodeSpeciesTag" class="DragonCodeArticle">
-					<h4>The Species Tag</h4>
-					<p>The Species tag, if present, must immediately follow the "<code>DC2.</code>". Thus the tag itself does not need to be identified with any letters, unlike other tags. (The original DragonCode documentation treats the Version Identifier as part of the Species tag and says that the Species tag must start with the Version Identifier. I think it makes more sense to consider these as separate tags.)</p>
-					<p>As with all tags, Species is not mandatory. If you don't include it, however, then you must put a space (<a href="https://codepoints.net/U+0020" target="_blank">U+0020 SPACE</a>) after the "<code>DC2.</code>" to separate it from other tags.</p>
-					<p>It is worth noting that, although this is called the <em>Dragon</em> Code, there are a number of other species included too. If your species is not listed, you can write it out in <code>"double quotes"</code> (either two of <a href="https://codepoints.net/U+0022" target="_blank">U+0022 QUOTATION MARK</a> or one each of <a href="https://codepoints.net/U+201C" target="_blank">U+201C LEFT DOUBLE QUOTATION MARK</a> and <a href="https://codepoints.net/U+201D" target="_blank">U+201D RIGHT DOUBLE QUOTATION MARK</a>). If your species fits into a general group, put the group first followed by the species in <code>"double quotes"</code>. For example, if you had a draconic species called "Mckdle" (those are just some random letters I typed; don't try to pronounce it!), then your Species tag would look like <code>D"Mckdle"</code></p>
-					
-					<article id="DragonCodeSpeciesMisc" class="DragonCodeArticle">
-						<h5>Modifiers/Miscellaneous</h5>
-						<ul>
-							<li><code>~</code> Shape changer. See <a href="#DragonCodeSpeciesShapeChangers">Shape Changers (<code>~</code>)</a>.</li>
-							<li>
-								<p><code>?</code> Unknown. A question mark does what a question mark usually does - mark a place where there is some question or uncertainty. Hence the term "question mark". In the Species tag, a <code>?</code> in place of a Group means you don't know what you are. That's fine; we're a welcoming bunch. Putting a <code>?</code> in place of or after a Subgroup means you're uncertain which Subgroup to which you belong. E.g.:
-									<ul>
-										<li><code>?</code> means you don't know what species you are.</li>
-										<li><code>D?</code> means you're a dragon, but you don't know what Subgroup to classify yourself as.</li>
-										<li><code>Dw?</code> means you're a dragon, and you think you're a western dragon but you're not certain.</li>
-									</ul>
-								</p>
-							</li>
-							
-							<li>
-								<p>
-									<code>^</code> "With features of". Put between two species tags, used to indicate that you're mainly the first species but with features of the second. For example, <code>Dw^Uz</code> indicates you're a western dragon with zombie features.
-								</p>
-							</li>
-							
-							<li>
-								<p>
-									<code>[]</code> "In the form of". Put a second species tag inside the square brackets. This is used to show when you're actually one species but currently in the form of another. For example, <code>A[F]</code> means you're an Amphibian trapped in Fish form.
-									<ul>
-										<li><code>{}</code> (other tags). You can specify different tags for each form, just put those tags inside curly brackets. <code>R{Gm B"Skittles"}[Dw{Gf}]</code> means you're normally a Reptile of the male gender and with the ability to breathe Skittles, but currently in the form of a female western dragon who cannot breathe Skittles. Like always, tags inside curly brackets should be separated with spaces.
-									</ul>
-								</p>
-							</li>
-							
-							<li>
-								<p>
-									<code>+</code> "Crossed with" (and you're the offspring). Put the plus sign between two Species tags. If both species are in the same group, the second group can be left out. For example:
-									<ul>
-										<li>If a pegasus (of the Mythical group) mated with a horse (a member of the Mammals group), their offspring could use the Species tags <code>Yp+Mh</code> or <code>Mh+Yp</code>.</li>
-										<li>On the other hand, if that pegasus had decided to mate with a centaur (another member of the Mythical group), the kids would use any of <code>Yp+c</code>, <code>Yp+Yc</code>, <code>Yc+p</code>, or <code>Yc+Yp</code>.</li>
-									</ul>
-								</p>
+					<article id="DragonCodeSpeciesTag" class="DragonCodeArticle">
+						<h4>The Species Tag</h4>
+						<p>The Species tag, if present, must immediately follow the "<code>DC2.</code>". Thus the tag itself does not need to be identified with any letters, unlike other tags. (The original DragonCode documentation treats the Version Identifier as part of the Species tag and says that the Species tag must start with the Version Identifier. I think it makes more sense to consider these as separate tags.)</p>
+						<p>As with all tags, Species is not mandatory. If you don't include it, however, then you must put a space (<a href="https://codepoints.net/U+0020" target="_blank">U+0020 SPACE</a>) after the "<code>DC2.</code>" to separate it from other tags.</p>
+						<p>It is worth noting that, although this is called the <em>Dragon</em> Code, there are a number of other species included too. If your species is not listed, you can write it out in <code>"double quotes"</code> (either two of <a href="https://codepoints.net/U+0022" target="_blank">U+0022 QUOTATION MARK</a> or one each of <a href="https://codepoints.net/U+201C" target="_blank">U+201C LEFT DOUBLE QUOTATION MARK</a> and <a href="https://codepoints.net/U+201D" target="_blank">U+201D RIGHT DOUBLE QUOTATION MARK</a>). If your species fits into a general group, put the group first followed by the species in <code>"double quotes"</code>. For example, if you had a draconic species called "Mckdle" (those are just some random letters I typed; don't try to pronounce it!), then your Species tag would look like <code>D"Mckdle"</code></p>
+						
+						<article id="DragonCodeSpeciesMisc" class="DragonCodeArticle">
+							<h5>Modifiers/Miscellaneous</h5>
+							<ul>
+								<li><code>~</code> Shape changer. See <a href="#DragonCodeSpeciesShapeChangers">Shape Changers (<code>~</code>)</a>.</li>
+								<li>
+									<p><code>?</code> Unknown. A question mark does what a question mark usually does - mark a place where there is some question or uncertainty. Hence the term "question mark". In the Species tag, a <code>?</code> in place of a Group means you don't know what you are. That's fine; we're a welcoming bunch. Putting a <code>?</code> in place of or after a Subgroup means you're uncertain which Subgroup to which you belong. E.g.:
+										<ul>
+											<li><code>?</code> means you don't know what species you are.</li>
+											<li><code>D?</code> means you're a dragon, but you don't know what Subgroup to classify yourself as.</li>
+											<li><code>Dw?</code> means you're a dragon, and you think you're a western dragon but you're not certain.</li>
+										</ul>
+									</p>
+								</li>
 								
-								<p><span class="ProposedDragonCodeChange">(proposed clarification):</span> In <a href="http://www.wyrm.org.uk/dc/species.html#Miscellaneous" target="_blank">Wyrm's official DragonCode documentation</a>, it is noted that "you can also have more than two species crossed by adding on more <code>+</code>s!". To make matters simpler for computer programmers, I choose to interpret this like so: <code>Dw+De+Dp</code> is the same as <code>Dw+(De+Dp)</code>, meaning that an eastern and a Pernese dragon had offspring, which then mated with a western dragon to produce you. See the proposed use of parentheses and the note on recursion, both below.</p>
-							</li>
+								<li>
+									<p>
+										<code>^</code> "With features of". Put between two species tags, used to indicate that you're mainly the first species but with features of the second. For example, <code>Dw^Uz</code> indicates you're a western dragon with zombie features.
+									</p>
+								</li>
+								
+								<li>
+									<p>
+										<code>[]</code> "In the form of". Put a second species tag inside the square brackets. This is used to show when you're actually one species but currently in the form of another. For example, <code>A[F]</code> means you're an Amphibian trapped in Fish form.
+										<ul>
+											<li><code>{}</code> (other tags). You can specify different tags for each form, just put those tags inside curly brackets. <code>R{Gm B"Skittles"}[Dw{Gf}]</code> means you're normally a Reptile of the male gender and with the ability to breathe Skittles, but currently in the form of a female western dragon who cannot breathe Skittles. Like always, tags inside curly brackets should be separated with spaces.
+										</ul>
+									</p>
+								</li>
+								
+								<li>
+									<p>
+										<code>+</code> "Crossed with" (and you're the offspring). Put the plus sign between two Species tags. If both species are in the same group, the second group can be left out. For example:
+										<ul>
+											<li>If a pegasus (of the Mythical group) mated with a horse (a member of the Mammals group), their offspring could use the Species tags <code>Yp+Mh</code> or <code>Mh+Yp</code>.</li>
+											<li>On the other hand, if that pegasus had decided to mate with a centaur (another member of the Mythical group), the kids would use any of <code>Yp+c</code>, <code>Yp+Yc</code>, <code>Yc+p</code>, or <code>Yc+Yp</code>.</li>
+										</ul>
+									</p>
+									
+									<p><span class="ProposedDragonCodeChange">(proposed clarification):</span> In <a href="http://www.wyrm.org.uk/dc/species.html#Miscellaneous" target="_blank">Wyrm's official DragonCode documentation</a>, it is noted that "you can also have more than two species crossed by adding on more <code>+</code>s!". To make matters simpler for computer programmers, I choose to interpret this like so: <code>Dw+De+Dp</code> is the same as <code>Dw+(De+Dp)</code>, meaning that an eastern and a Pernese dragon had offspring, which then mated with a western dragon to produce you. See the proposed use of parentheses and the note on recursion, both below.</p>
+								</li>
+								
+								<li>
+									<code>()</code> <span class="ProposedDragonCodeChange">(proposed)</span> Used for grouping Species tags, just like parentheses can be used in mathematical expressions to group sub-expressions. Use in combination with the other modifiers when things could get confusing. Put a Species tag inside the parentheses. For example:
+									<ul>
+										<li>In math,
+											<ul>
+												<li><code>(1+2)×3</code> means to add 1 and 2 before multiplying the result by 3.</li>
+												<li>whereas <code>1+(2×3)</code> or <code>1+2×3</code> means to first multiply 2 and 3, then add 1 to the result.</li>
+											</ul>
+										</li>
+										<li>In DC2,
+											<ul>
+												<li><code>(Dw+De)[H]</code> means you're really a mix of eastern and western dragons, but you're in the form of a human.</li>
+												<li><code>Dw+(De[H])</code> or <code>Dw+De[H]</code> means you're really a mix of eastern and western dragons, and the eastern dragon is/was in the form of a human.</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
 							
-							<li>
-								<code>()</code> <span class="ProposedDragonCodeChange">(proposed)</span> Used for grouping Species tags, just like parentheses can be used in mathematical expressions to group sub-expressions. Use in combination with the other modifiers when things could get confusing. Put a Species tag inside the parentheses. For example:
-								<ul>
-									<li>In math,
-										<ul>
-											<li><code>(1+2)×3</code> means to add 1 and 2 before multiplying the result by 3.</li>
-											<li>whereas <code>1+(2×3)</code> or <code>1+2×3</code> means to first multiply 2 and 3, then add 1 to the result.</li>
-										</ul>
-									</li>
-									<li>In DC2,
-										<ul>
-											<li><code>(Dw+De)[H]</code> means you're really a mix of eastern and western dragons, but you're in the form of a human.</li>
-											<li><code>Dw+(De[H])</code> or <code>Dw+De[H]</code> means you're really a mix of eastern and western dragons, and the eastern dragon is/was in the form of a human.</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
+							<em>Note:</em> The <code>^</code>, <code>[]</code>, and <code>+</code> modifiers all introduce <a href="https://en.wiktionary.org/wiki/recursion" target="_blank" hreflang="en">recursion</a> into the Species tag: they make it possible to include Species tags inside a Species tag. A single Species tag can contain two Species tags if it uses one of these modifiers, each of which can contain two Species tags if it uses one of these modifiers, each of which can contain two Species tags if it uses one of these modifiers... This is important to note because it allows for multiple Species. For example: <code>Dw[Yp]^Mh</code> is perfectly acceptable because <code>Dw</code> is a valid Species tag, <code>Yp</code> is another valid Species tag, and <code>Mh</code> is a third valid tag. The <code>Dw</code> and <code>Yp</code> combine (using square brackets) to form another valid Species tag, <code>Dw[Yp]</code>. That then combines with <code>Mh</code> using the circumflex (<code>^</code>) to produce the final valid Species tag, <code>Dw[Yp]^Mh</code>.
+						</article>
+						
+						<article id="DragonCodeSpeciesAmphibians" class="DragonCodeArticle">
+							<h5>Amphibians (<code>A</code>)</h5>
+							<p>
+								Wiktionary defines the word amphibian as
+								<blockquote cite="https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943">
+									<ol>
+										<li>An animal of the Amphibia; any four-legged vertebrate that does not have amniotic eggs, living both on land and in water.</li>
+										<li>A vehicle which can operate on land and water. See Wikipedia article on "Amphibious aircraft"</li>
+									</ol>
+									<details>
+										<summary>citation</summary>
+										amphibian. (2016, December 30). Wiktionary, The Free Dictionary. Retrieved 09:12, February 18, 2017 from <a href="https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943" target="_blank" hreflang="en">https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943</a>.
+									</details>
+								</blockquote>
+								While one certainly could consider certain species as vehicles (horse riding is a thing, after all), for the purpose of the Dragon Code we tend to use the first definition.
+							</p>
+							<ul>
+								<li>Group: A lone capital <code>A</code> indicates "I'm an amphibian and I'm not telling you what kind".</li>
+								<li>Subgroups:
+									<ul>
+										<li><span class="ProposedDragonCodeChange">(proposed addition)</span> <code>c</code>	Caecilians - <code>Ac</code></li>
+										<li><code>f</code> Frogs - <code>Af</code></li>
+										<li><code>n</code> Newts - <code>An</code></li>
+										<li><code>s</code> Salamanders - <code>As</code></li>
+										<li><code>t</code> Toads - <code>At</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesBirds" class="DragonCodeArticle">
+							<h5>Birds (<code>B</code>)</h5>
+							<p>Look! Up in the sky! It's one of those feathery things that sits in a tree and beeps at you!</p>
+							<ul>
+								<li>Group: A lone capital <code>B</code> indicates "I'm an animal of the feathered avian variety and that's all you need to know".</li>
+								<li>Subgroups:
+									<ul>
+										<li><code>c</code> Crows - <code>Bc</code></li>
+										<li><code>e</code> Eagles - <code>Be</code></li>
+										<li><code>h</code> Hawks - <code>Bh</code></li>
+										<li><code>p</code> Phoenix - <code>Bp</code></li>
+										<li><code>r</code> Ravens - <code>Br</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesCrustaceans" class="DragonCodeArticle">
+							<h5>Crustaceans (<code>C</code>)</h5>
+							<p>You should sell hamburgers under the sea. Convince a sponge and a squid to work for you.</p>
+							<ul>
+								<li>Group: A lone capital <code>C</code> indicates "I have a shell. It's not that crusty...".</li>
+								<li>Subgroups:
+									<ul>
+										<li><code>c</code> Crabs - <code>Cc</code></li>
+										<li><code>l</code> Lobsters - <code>Cl</code></li>
+										<li><code>s</code> Shrimps - <code>Cs</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesDragons" class="DragonCodeArticle">
+							<h5>Dragons (<code>D</code>)</h5>
+							<p>Rarr! The term 'dragon' is ill-defined and not consistent between countries and cultures. It can refer to a type of carrier pigeon, a short musket, a constellation of stars in the sky of Earth's northern hemisphere, and many other things. Our position in The Dominance is that if you want to call yourself a dragon, fine - you're a dragon.</p>
+							<ul>
+								<li>Group: A lone capital <code>D</code> indicates "<em>Pesky inferior beings</em>, why must you insist on subclassifying my draconity?".</li>
+								<li>Subgroups:
+									<ul>
+										<li><code>a</code> Amphiteres - <code>Da</code></li>
+										<li><code>c</code> Draconids - <code>Dc</code></li>
+										<li><code>d</code> dragonets - <code>Dd</code></li>
+										<li><code>e</code> Eastern dragons - <code>De</code></li>
+										<li><code>f</code> Fairy dragons - <code>Df</code></li>
+										<li><code>h</code> Hydra - <code>Dh</code></li>
+										<li><code>i</code> dImar - <code>Di</code></li>
+										<li><code>l</code> dracoLich - <code>Dl</code></li>
+										<li><code>p</code> Pernese dragons - <code>Dp</code></li>
+										<li><code>r</code> tuRtle dragons - <code>Dr</code></li>
+										<li><code>s</code> Serpents - <code>Ds</code>
+											<ul>
+												<li><code>b</code> <span class="ProposedDragonCodeChange">(proposed)</span> Basilisks - <code>Dsb</code></li>
+												<li><code>s</code> Sea serpents - <code>Dss</code></li>
+												<li><code>f</code> Fire serpents - <code>Dsf</code></li>
+											</ul>
+										</li>
+										<li><code>t</code> Tarrasques - <code>Dt</code></li>
+										<li><code>u</code> pseUdodragons - <code>Du</code></li>
+										<li><code>v</code> wyVerns - <code>Dv</code></li>
+										<li><code>w</code> Western dragons - <code>Dw</code></li>
+										<li><code>y</code> wYrms - <code>Dy</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesExtraTerrestrials" class="DragonCodeArticle">
+							<h5>Extra-Terrestrials</h5>
+							<p>Could Captain Kirk's universal translator translate "Nanu nanu"?</p>
+							<ul>
+								<li>Group: <code>E</code> means "I'm not from around here, if you know what I mean."</li>
+								<li>Subgroups:
+									<ul>
+										<li><code>d</code> Daleks - <code>Ed</code></li>
+										<li><code>t</code> Tribbles - <code>Et</code> (not the ET that phones home!)</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesFish" class="DragonCodeArticle">
+							<h5>Fish</h5>
+							<p>Do you have any aces?</p>
+							<ul>
+								<li>A plain <code>F</code> means "I swim, I have gills, what more do you need to know?".</li>
+								<li>Subgroups:
+									<ul>
+										<li><code>h</code> sea Horses - <code>Fh</code></li>
+										<li><code>f</code> Freshwater fish - <code>Ff</code>
+											<ul>
+												<li><code>g</code> Goldfish - <code>Ffg</code></li>
+												<li><code>t</code> Trout - <code>Fft</code></li>
+											</ul>
+										</li>
+										<li><code>s</code> Sharks - <code>Fs</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesHumanoids" class="DragonCodeArticle">
+							<h5>Humanoids</h5>
+							<p>Not just humans in this category.</p>
+							<p><em>Note:</em> Since it is so common for characters to be humanoid versions of other species, it's worth noting here that you can use <code>^</code> to combine species. See the <a href="#DragonCodeSpeciesMisc">Modifiers/Miscellaneous</a> section for details.</p>
+							<p><em>Note 2:</em> For unknown/anthropomorphic species, add a <code>?</code> modifier, e.g. <code>H?</code> indicates that you're uncertain which subgroup to specify. Actual humans just use a plain <code>H</code>.
+							<ul>
+								<li>An <code>H</code> means "I'm human(oid). Do I <em>really</em> need to tell you how many <em>heads</em> I have?"
+									<ul>
+										<li><code>a</code> Apes - <code>Ha</code></li>
+										<li><code>d</code> Dwarfs - <code>Hd</code></li>
+										<li><code>e</code> Elves - <code>He</code>
+											<ul>
+												<li><code>w</code> Wood elves - <code>Hew</code></li>
+											</ul>
+										</li>
+										<li><code>f</code> Fairies - <code>Hf</code></li>
+										<li><code>i</code> gIants - <code>Hi</code></li>
+										<li><code>g</code> Gnomes - <code>Hg</code></li>
+										<li><code>h</code> Hobbitses - <code>Hh</code></li>
+										<li><code>k</code> Kender - <code>Hk</code></li>
+										<li><code>t</code> Trolls - <code>Ht</code></li>
+										<li><code>w</code> Wolfmen (wolfwomen too 🐺) - <code>Hw</code></li>
+										<li><code>y</code> nYmphs - <code>Hy</code>
+											<ul>
+												<li><span class="ProposedDragonCodeChange">(proposed change)</span> <code>n</code> Nymphs - <code>Hn</code> Why don't we use an n for nymphs?</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesInsects" class="DragonCodeArticle">
+							<h5>Insects</h5>
+							<p>Arachnids, bugs, arthropods, ...</p>
+							<ul>
+								<li><code>I</code> means "I'm an insect, now buzz off!"
+									<ul>
+										<li><code>a</code> Ants - <code>Ia</code></li>
+										<li><code>b</code> Beetles - <code>Ib</code></li>
+										<li><code>f</code> Flies - <code>If</code></li>
+										<li><code>l</code> Locusts - <code>Il</code></li>
+										<li><code>m</code> Moths - <code>Im</code></li>
+										<li><code>u</code> bUtterflies - <code>Ib</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesLegends" class="DragonCodeArticle">
+							<h5>Legends</h5>
+							<p>Anything from recent (after the Dark Ages) stories. See <a href="#DragonCodeSpeciesMythical">Mythical</a> for species from pre-Dark Ages stories.</p>
+							<ul>
+								<li><code>L</code> means "What do you mean I'm not old enough to count as mythical? That's totally my real ID card!"
+									<ul>
+										<li><code>f</code> salamanders - <code>Lf</code>
+											<ul>
+												<li><span class="ProposedDragonCodeChange">(proposed change)</span> <code>a</code> sAlamanders - <code>La</code> I think it makes more sense to pick a letter that is actually in the word.</li>
+											</ul>
+										</li>
+										<li><code>g</code> Griffons (also spelled Gryphons) - <code>Lg</code></li>
+										<li><code>l</code> gremLins - <code>Ll</code></li>
+										<li><code>m</code> Merfolk - <code>Lm</code></li>
+										<li><code>n</code> maNticores - <code>Ln</code></li>
+										<li><code>r</code> gaRgoyles - <code>Lr</code></li>
+										<li><code>s</code> Sprites - <code>Ls</code></li>
+										<li><code>t</code> Treefolk (a.k.a. Treants) - <code>Lt</code></li>
+										<li><code>u</code> Unicorns - <code>Lu</code></li>
+									</ul>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesMammals" class="DragonCodeArticle">
+							<h5>Mammals</h5>
+							<p>Any animal fitting into the scientific classification Mammalia: they're warm-blooded, usually covered in fur, and they feed their young with milk.</p>
+							<ul>
+								<li><code>M</code> is for Mammal.
+									<ul>
+										<li><code>a</code> bAts - <code>Ma</code></li>
+										<li><code>b</code> Bears - <code>Mb</code></li>
+										<li><code>c</code> Canines - <code>Mc</code>
+											<ul>
+												<li><code>d</code> Domestic dogs - <code>Mcd</code></li>
+												<li><code>f</code> Foxes - <code>Mcf</code> Tell us, Mr./Mrs. fox, <a href="https://www.youtube.com/watch?v=jofNR_WkoCE" target="_blank">what does the fox say?</a></li>
+												<li><code>w</code> Wolves - <code>Mcw</code></li>
+											</ul>
+										</li>
+										<li><code>f</code> Felines - <code>Mf</code>
+											<ul>
+												<li><code>a</code> pAnthers - <code>Mfa</code></li>
+												<li><code>b</code> Black panthers - <code>Mfb</code></li>
+												<li><code>c</code> Cheetahs - <code>Mfc</code></li>
+												<li><code>d</code> Domestic cats - <code>Mfd</code></li>
+												<li><code>l</code> Lions - <code>Mfl</code></li>
+												<li><code>p</code> leoPards - <code>Mfp</code>
+													<ul>
+														<li><code>s</code> Snow leopards - <code>Mfps</code></li>
+													</ul>
+												</li>
+												<li><code>t</code> Tigers - <code>Mft</code></li>
+												<li><code>u</code> pUmas - <code>Mfu</code></li>
+												<li><code>x</code> lynXes - <code>Mfx</code></li>
+											</ul>
+										</li>
+										<li><code>h</code> Horses - <code>Mh</code></li>
+										<li><code>m</code> Monkeys - <code>Mm</code>
+											<ul>
+												<li><code>g</code> Gibbons - <code>Mmg</code></li>
+											</ul>
+										</li>
+										<li><code>p</code> Polecats - <code>Mp</code>
+											<ul>
+												<li><code>f</code> Ferrets - <code>Mpf</code></li>
+												<li><code>m</code> Mink - <code>Mpm</code></li>
+											</ul>
+										</li>
+										<li><code>r</code> Rodents - <code>Mr</code>
+											<ul>
+												<li><code>g</code> Gerbils - <code>Mrg</code></li>
+												<li><code>h</code> Hamsters - <code>Mrh</code></li>
+												<li><code>m</code> Mice - <code>Mrm</code></li>
+												<li><code>r</code> Rats - <code>Mrr</code></li>
+												<li><code>s</code> Squirrels - <code>Mrs</code></li>
+											</ul>
+										</li>
+										<li><code>w</code> Whales/cetaceans - <code>Mw</code>
+											<ul>
+												<li><code>d</code> Dolphins - <code>Mwd</code></li>
+												<li><code>k</code> Killer whales - <code>Mwk</code> Do we really want to refer to the entire species as 'killer'? Seems kinda racist to me.</li>
+												<li><code>p</code> Porpoises - <code>Mwp</code></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesMollusks" class="DragonCodeArticle">
+							<h5>mOllusks</h5>
+							<p>You've got a soft body, and probably a hard shell, and you're <a href="https://duckduckgo.com/?q=soft-body+robotics" target="_blank">not a robot</a>.</p>
+							<ul>
+								<li><code>O</code> mOllusks - <code>O</code> means "I carry my entire home on my back. Talk about strength!"
+									<ul>
+										<li><code>c</code> Cuttlefish - <code>Oc</code></li>
+										<li><code>l</code> Limpets - <code>Ol</code></li>
+										<li><code>o</code> Octopuses - <code>Oo</code></li>
+										<li><code>s</code> Snails - <code>Os</code></li>
+										<li><code>y</code> oYsters - <code>Oy</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesMythical" class="DragonCodeArticle">
+							<h5>mYthical</h5>
+							<p>Any species old enough to have existed in pre-Dark Ages myths.</p>
+							<ul>
+								<li><code>Y</code> means your species is from a time when the English word 'monster' meant a very knowledgable animal, the apex of natural wisdom and goodness. A time when being labeled a monster was an honor, not an insult.
+									<ul>
+										<li><code>c</code> Centaurs - <code>Yc</code></li>
+										<li><code>g</code> Golems - <code>Yg</code></li>
+										<li><code>h</code> Hellhounds - <code>Yh</code></li>
+										<li><code>m</code> Minotaurs - <code>Ym</code></li>
+										<li><code>p</code> Pegasi - <code>Yp</code></li>
+										<li><code>s</code> Sphinxes - <code>Ys</code></li>
+										<li><code>t</code> saTyrs - <code>Yt</code></li>
+										<li><code>y</code> cYclopses - <code>Yy</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesPlants" class="DragonCodeArticle">
+							<h5>Plants</h5>
+							<p>Species that have roots in the local landscape, unlikely to move away.</p>
+							<ul>
+								<li>A <code>P</code> means "I'm a plant. Now move, you're blocking the sunlight."
+									<ul>
+										<li><code>c</code> Cactuses - <code>Pc</code></li>
+										<li><code>f</code> Funguses - <code>Pf</code></li>
+										<li><code>t</code> Trees - <code>Pt</code>
+											<ul>
+												<li><code>a</code> Ash trees - <code>Pta</code></li>
+												<li><code>e</code> Elm trees - <code>Pte</code></li>
+												<li><code>o</code> Oak trees - <code>Pto</code></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesReptiles" class="DragonCodeArticle">
+							<h5>Reptiles</h5>
+							<p>Are you covered in scales? Do you feel energized after warming up in the sun? You might be a reptile.</p>
+							<ul>
+								<li>
+									<code>R</code> means "I'm a reptile, not 'a mean or grovelling person'."
+									<details>
+										<summary>(Wiktionary)</summary>
+										<p>reptile. (2017, February 19). Wiktionary, The Free Dictionary. Retrieved 23:30, March 2, 2017 from <a href="https://en.wiktionary.org/w/index.php?title=reptile&oldid=42274015" target="_blank">https://en.wiktionary.org/w/index.php?title=reptile&oldid=42274015</a>.</p>
+									</details>
+									
+									<ul>
+										<li><code>a</code> Alligators and crocodiles - <code>Ra</code></li>
+										<li><code>c</code> Chameleons - <code>Rc</code></li>
+										<li><code>g</code> Geckos - <code>Rg</code></li>
+										<li><code>k</code> Komodo dragons - <code>Rk</code></li>
+										<li><code>l</code> Lizards - <code>Rl</code></li>
+										<li><code>n</code> skiNks - <code>Rn</code>
+											<ul>
+												<li><code>f</code> Fire skinks - <code>Rnf</code></li>
+											</ul>
+										</li>
+										<li><code>s</code> Snakes - <code>Rs</code></li>
+										<li><code>t</code> Turtles - <code>Rt</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesSaurians" class="DragonCodeArticle">
+							<h5>Saurians</h5>
+							<p>Dinosaurs. The giant lizard beings that roamed the Earth so many eons ago.</p>
+							<ul>
+								<li>A lone <code>S</code> means "My species existed 65 million years ago (more or less), and we totally did not evolve into puny little chickens! I wouldn't be here if we had!"
+									<ul>
+										<li><code>a</code> Allosaurs - <code>Sa</code></li>
+										<li><code>c</code> triCeratops - <code>Sc</code></li>
+										<li><code>p</code> aPatosaurs - <code>Sp</code></li>
+										<li><code>s</code> Stegosaurs - <code>Ss</code></li>
+										<li><code>t</code> Tyrannosaurs - <code>St</code></li>
+										<li><code>v</code> Velociraptors - <code>Sv</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesShapeChangers" class="DragonCodeArticle">
+							<h5>Shape Changers</h5>
+							<p>To be honest, I'm not sure whether this should count as a species or a modifier. The official Dragon Code documentation has it listed as a species, so that's how it is here. Shape changers take the form(s) of other species.</p>
+							<p>A lone <code>~</code> identifies your species as shape changers. There are no subspecies in this version of the Dragon Code.</p>
+							<p>If you primarily identify as a shape changer, you put the <code>~</code> first and then list whatever species you take the form(s) of. On the other hand, if you primarily identify as some other species and you just happen to be able to chagne shape, put that other species first. For example, to say "I am a shape changer who usually takes the form of a fly", you would type <code>~If</code>. On the other hand, if you want to say "I am a fly who can change shape", you would type <code>If~</code>. Other Species tags can be appended after the <code>~</code>, separated by a forward slash (<code>/</code>), e.g. to say that you're a shape changer who shifts between eastern and western draconic forms, you could type <code>~Dw/De</code>.</p>
+						</article>
+						
+						<article id="DragonCodeSpeciesSpirits" class="DragonCodeArticle">
+							<h5>Spirits</h5>
+							<p>Not the kind that you drink, the kind that might take you to a bar and get you drunk.</p>
+							<ul>
+								<li>For some reason <code>Q</code> means you're a spirit. Quite quixotic.
+									<ul>
+										<li><code>a</code> Angels - <code>Qa</code></li>
+										<li><code>d</code> Devils and demons - <code>Qd</code></li>
+										<li><code>g</code> Ghosts - <code>Qg</code></li>
+										<li><code>i</code> Imps - <code>Qi</code></li>
+										<li><code>p</code> Poltergeists - <code>Qp</code></li>
+										<li><code>s</code> Specters - <code>Qs</code></li>
+										<li><code>w</code> Will-o-the-wisps - <code>Qw</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article id="DragonCodeSpeciesUndead" class="DragonCodeArticle">
+							<h5>Undead</h5>
+							<p>Think about <em>this</em>: we're all undead if you consider pre-life as a form of death.</p>
+							<ul>
+								<li><code>U</code> means "I died, then I undied.". Which is somehow not the same as being born-again.
+									<ul>
+										<li><code>g</code> Ghouls - <code>Ug</code> How is this different from ghosts?</li>
+										<li><code>v</code> Vampires - <code>Uv</code></li>
+										<li><code>z</code> Zombies - <code>Uz</code></li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+					</article> <!--id="DragonCodeSpeciesTag"-->
+					
+					<article id="DragonCodeActivityIndexTag" class="DragonCodeArticle">
+						<h4>Activity Index</h4>
+						<p>This tag refers to your online activity, not your physical activity. See <a href="#DragonCodeWeightTonnageTag">Tonnage</a> if that's what you're looking for.</p>
+						<p>The following descriptions are rough guides.</p>
+						<ul>
+							<li><code>Ac+++!</code> I am a Borg. I am in the Matrix. I am never disconnected.</li>
+							<li><code>Ac+++</code> What is 'outside'? Is that the stuff I see through my window?</li>
+							<li><code>Ac++</code> I spend a reasonable amount of time online (and by 'reasonable' I mean '<strong>absolutely</strong> no less than 8 hours per day')</li>
+							<li><code>Ac+</code> I spend a reasonable amount of time online (and by 'reasonable' I mean 'a couple of hours a day')</li>
+							<li><code>Ac</code> I get online every day long enough to check my email.</li>
+							<li><code>Ac-</code> I'm Here maybe twice a week.</li>
+							<li><code>Ac--</code> I get online maybe once every one or two weeks.</li>
+							<li><code>Ac---</code> I've been online before.</li>
+							<li><code>Ac---!</code> I almost got online once, when a friend tried to walk me through it...</li>
+							<li><code>Ac~</code> Variable, but I'm in control. I go online whenever I want.</li>
+							<li><code>Ac?</code> Variable, and Real Life is in control. I don't know when I'll get online.</li>
 						</ul>
 						
-						<em>Note:</em> The <code>^</code>, <code>[]</code>, and <code>+</code> modifiers all introduce <a href="https://en.wiktionary.org/wiki/recursion" target="_blank" hreflang="en">recursion</a> into the Species tag: they make it possible to include Species tags inside a Species tag. A single Species tag can contain two Species tags if it uses one of these modifiers, each of which can contain two Species tags if it uses one of these modifiers, each of which can contain two Species tags if it uses one of these modifiers... This is important to note because it allows for multiple Species. For example: <code>Dw[Yp]^Mh</code> is perfectly acceptable because <code>Dw</code> is a valid Species tag, <code>Yp</code> is another valid Species tag, and <code>Mh</code> is a third valid tag. The <code>Dw</code> and <code>Yp</code> combine (using square brackets) to form another valid Species tag, <code>Dw[Yp]</code>. That then combines with <code>Mh</code> using the circumflex (<code>^</code>) to produce the final valid Species tag, <code>Dw[Yp]^Mh</code>.
+						<p>This tag is brought to you by the letter <code>c</code>. If there's no <code>c</code>, it's not an Activity Index tag. Be careful - you don't want to accidentally lie about your <a href="#DragonCodeAgeTag">age (<code>A</code>)</a>... or do you?</p>
 					</article>
 					
-					<article id="DragonCodeSpeciesAmphibians" class="DragonCodeArticle">
-						<h5>Amphibians (<code>A</code>)</h5>
-						<p>
-							Wiktionary defines the word amphibian as
-							<blockquote cite="https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943">
-								<ol>
-									<li>An animal of the Amphibia; any four-legged vertebrate that does not have amniotic eggs, living both on land and in water.</li>
-									<li>A vehicle which can operate on land and water. See Wikipedia article on "Amphibious aircraft"</li>
-								</ol>
-								<details>
-									<summary>citation</summary>
-									amphibian. (2016, December 30). Wiktionary, The Free Dictionary. Retrieved 09:12, February 18, 2017 from <a href="https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943" target="_blank" hreflang="en">https://en.wiktionary.org/w/index.php?title=amphibian&oldid=41969943</a>.
-								</details>
-							</blockquote>
-							While one certainly could consider certain species as vehicles (horse riding is a thing, after all), for the purpose of the Dragon Code we tend to use the first definition.
-						</p>
+					<article id="DragonCodeAgeTag" class="DragonCodeArticle">
+						<h4>Age</h4>
+						<p>How old am I? As old as my toes and older than my whiskers.</p>
 						<ul>
-							<li>Group: A lone capital <code>A</code> indicates "I'm an amphibian and I'm not telling you what kind".</li>
-							<li>Subgroups:
+							<li><code>A+++!</code> Ancient</li>
+							<li><code>A+++</code> Almost ancient</li>
+							<li><code>A++</code> Old enough to not reveal your true age</li>
+							<li><code>A+</code> You've been around a while</li>
+							<li><code>A</code> Adult</li>
+							<li><code>A-</code> Young adult</li>
+							<li><code>A--</code> Older child</li>
+							<li><code>A---</code> Just hatched</li>
+							<li><code>A---!</code> Not even hatched yet!</li>
+							<li><code>A?</code> No idea. Not all cultures bother to measure age.</li>
+						</ul>
+						<h5>Modifiers:</h5>
+						<ul>
+							<li><code>r</code> Indicates that this Age tag specifies your Real Life age. Put this after the <code>A</code>, e.g. <code>Ar+++!</code> means you are truly ancient.</li>
+							<li><code>v</code> Indicates that this Age tag specifies your Virtual Life age. Put this after the <code>A</code>, e.g. <code>Av---</code> means that your online self is very young.</li>
+							<li><code>()</code> While you may choose to put your Real Life and Virtual Life ages as separate tags, you can also group them into a single Age tag using parentheses: <code>A(r-v+)</code>, for example, indicates that your Real Life self is a young adult while your virtual self is a bit older. This is equivalent to <code>Ar- Av+</code>.
+						</ul>
+					</article>
+					
+					<article id="DragonCodeAppendagesTag" class="DragonCodeArticle">
+						<h4>aPpendages</h4>
+						<p>This tag specifies how many and what types of limbs you have. As with all tags, you can choose not to include this tag if you have the 'normal' set of appendages. Note that most of these appendages come in pairs; see the modifiers below if you want to specify an unusual number of them.</p>
+						<ul>
+							<li><code>a</code> a pair of Arms - <code>Pa</code></li>
+							<li><code>f</code> a pair of Fore-limbs (limbs that can be used as either arms or legs) - <code>Pf</code></li>
+							<li><code>h</code> a Head - <code>Ph</code></li>
+							<li><code>k</code> a crest; may or may not be head ornamentation. - <code>Pk</code></li>
+							<li><code>l</code> a pair of Legs - <code>Pl</code></li>
+							<li><code>p</code> a pair of Paddles, flukes, fins, etc. - <code>Pp</code></li>
+							<li><code>t</code> a Tail - <code>Pt</code></li>
+							<li><code>v</code> a pair of spines or horns on the head - <code>Pv</code></li>
+							<li><code>w</code> a pair of Wings - <code>Pw</code>
 								<ul>
-									<li><span class="ProposedDragonCodeChange">(proposed addition)</span> <code>c</code>	Caecilians - <code>Ac</code></li>
-									<li><code>f</code> Frogs - <code>Af</code></li>
-									<li><code>n</code> Newts - <code>An</code></li>
-									<li><code>s</code> Salamanders - <code>As</code></li>
-									<li><code>t</code> Toads - <code>At</code></li>
+									<li><code>'</code> a pair of Wings that also act as arms and/or legs - <code>Pw'</code></li>
 								</ul>
 							</li>
 						</ul>
+						<h5>Modifiers:</h5>
+						<ul>
+							<li><code>^</code> means the appendage has a webbed hand or foot.</li>
+							<li><code>+</code> One more than the amount specified above.</li>
+							<li><code>-</code> One less than the amount specified above.</li>
+							<li><code>!</code> Many. An unspecified large number.</li>
+							<li><code>number</code> Multiplier. You have this many times the amount (pair or single) specified above.</li>
+							<li><code>~</code> Variable. You grow limbs as needed.</li>
+						</ul>
+						
+						<p>You can combine as many of the above options as you want. E.g. an octopus with a missing leg would use the tag <code>Pl3l-</code>: <code>l3</code> means you have 3 pairs of legs, and <code>l-</code> means add another pair but subtract 1, bringing the total number of legs to 7. A common western dragon might use the tag <code>Phfwlt</code>, indicating that they have a head, a pair of forelimbs, a pair of wings, a pair of legs, and a tail. Or said dragon might not include this tag at all since that is a very common set of limbs for dragons.</p>
 					</article>
 					
-					<article id="DragonCodeSpeciesBirds" class="DragonCodeArticle">
-						<h5>Birds (<code>B</code>)</h5>
-						<p>Look! Up in the sky! It's one of those feathery things that sits in a tree and beeps at you!</p>
+					<article id="DragonCodeBreathWeaponTag" class="DragonCodeArticle">
+						<h4>Breath weapon</h4>
+						<p>If your breath really stinks, just say it's the flammable gas you exhale to breathe fire.</p>
+						<p>If your breath weapon isn't listed here, or you want to add more detail, you can always write it out in quotes: <code>B"ice cream"</code> means you exhale ice cream; <code>Beg"radio waves"</code> means you breathe energy in the form of radio waves.
 						<ul>
-							<li>Group: A lone capital <code>B</code> indicates "I'm an animal of the feathered avian variety and that's all you need to know".</li>
-							<li>Subgroups:
-								<ul>
-									<li><code>c</code> Crows - <code>Bc</code></li>
-									<li><code>e</code> Eagles - <code>Be</code></li>
-									<li><code>h</code> Hawks - <code>Bh</code></li>
-									<li><code>p</code> Phoenix - <code>Bp</code></li>
-									<li><code>r</code> Ravens - <code>Br</code></li>
-								</ul>
-							</li>
+							<li><code>ac</code> ACid - <code>Bac</code></li>
+							<li><code>co</code> COld/frost - <code>Bco</code></li>
+							<li><code>en</code> ENchantment - <code>Ben</code></li>
+							<li><code>eg</code> EnerGy - <code>Beg</code></li>
+							<li><code>fl</code> FLames - <code>Bfl</code></li>
+							<li><code>he</code> HEat - <code>Bhe</code></li>
+							<li><code>ic</code> ICe - <code>Bic</code></li>
+							<li><code>la</code> LAva - <code>Bla</code></li>
+							<li><code>ph</code> PHotons - <code>Bph</code></li>
+							<li><code>ro</code> ROt - <code>Bro</code></li>
+							<li><code>sm</code> SMoke - <code>Bsm</code></li>
+							<li><code>st</code> STeam - <code>Bst</code></li>
+							<li><code>su</code> SUlphur - <code>Bsu</code></li>
+							<li><code>vg</code> Volcanic Gases - <code>Bvg</code></li>
+							<li><code>wa</code> WAter - <code>Bwa</code></li>
+							<li><code>wi</code> WInd - <code>Bwi</code></li>
+							<li><code>zz</code> electricity (ZZap!) - <code>Bzz</code></li>
+							<li><code>-</code> none - <code>B-</code>. Equivalent to <code>B"none"</code></li>
 						</ul>
 					</article>
-					
-					<article id="DragonCodeSpeciesCrustaceans" class="DragonCodeArticle">
-						<h5>Crustaceans (<code>C</code>)</h5>
-						<p>You should sell hamburgers under the sea. Convince a sponge and a squid to work for you.</p>
-						<ul>
-							<li>Group: A lone capital <code>C</code> indicates "I have a shell. It's not that crusty...".</li>
-							<li>Subgroups:
-								<ul>
-									<li><code>c</code> Crabs - <code>Cc</code></li>
-									<li><code>l</code> Lobsters - <code>Cl</code></li>
-									<li><code>s</code> Shrimps - <code>Cs</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesDragons" class="DragonCodeArticle">
-						<h5>Dragons (<code>D</code>)</h5>
-						<p>Rarr! The term 'dragon' is ill-defined and not consistent between countries and cultures. It can refer to a type of carrier pigeon, a short musket, a constellation of stars in the sky of Earth's northern hemisphere, and many other things. Our position in The Dominance is that if you want to call yourself a dragon, fine - you're a dragon.</p>
-						<ul>
-							<li>Group: A lone capital <code>D</code> indicates "<em>Pesky inferior beings</em>, why must you insist on subclassifying my draconity?".</li>
-							<li>Subgroups:
-								<ul>
-									<li><code>a</code> Amphiteres - <code>Da</code></li>
-									<li><code>c</code> Draconids - <code>Dc</code></li>
-									<li><code>d</code> dragonets - <code>Dd</code></li>
-									<li><code>e</code> Eastern dragons - <code>De</code></li>
-									<li><code>f</code> Fairy dragons - <code>Df</code></li>
-									<li><code>h</code> Hydra - <code>Dh</code></li>
-									<li><code>i</code> dImar - <code>Di</code></li>
-									<li><code>l</code> dracoLich - <code>Dl</code></li>
-									<li><code>p</code> Pernese dragons - <code>Dp</code></li>
-									<li><code>r</code> tuRtle dragons - <code>Dr</code></li>
-									<li><code>s</code> Serpents - <code>Ds</code>
-										<ul>
-											<li><code>b</code> <span class="ProposedDragonCodeChange">(proposed)</span> Basilisks - <code>Dsb</code></li>
-											<li><code>s</code> Sea serpents - <code>Dss</code></li>
-											<li><code>f</code> Fire serpents - <code>Dsf</code></li>
-										</ul>
-									</li>
-									<li><code>t</code> Tarrasques - <code>Dt</code></li>
-									<li><code>u</code> pseUdodragons - <code>Du</code></li>
-									<li><code>v</code> wyVerns - <code>Dv</code></li>
-									<li><code>w</code> Western dragons - <code>Dw</code></li>
-									<li><code>y</code> wYrms - <code>Dy</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesExtraTerrestrials" class="DragonCodeArticle">
-						<h5>Extra-Terrestrials</h5>
-						<p>Could Captain Kirk's universal translator translate "Nanu nanu"?</p>
-						<ul>
-							<li>Group: <code>E</code> means "I'm not from around here, if you know what I mean."</li>
-							<li>Subgroups:
-								<ul>
-									<li><code>d</code> Daleks - <code>Ed</code></li>
-									<li><code>t</code> Tribbles - <code>Et</code> (not the ET that phones home!)</li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesFish" class="DragonCodeArticle">
-						<h5>Fish</h5>
-						<p>Do you have any aces?</p>
-						<ul>
-							<li>A plain <code>F</code> means "I swim, I have gills, what more do you need to know?".</li>
-							<li>Subgroups:
-								<ul>
-									<li><code>h</code> sea Horses - <code>Fh</code></li>
-									<li><code>f</code> Freshwater fish - <code>Ff</code>
-										<ul>
-											<li><code>g</code> Goldfish - <code>Ffg</code></li>
-											<li><code>t</code> Trout - <code>Fft</code></li>
-										</ul>
-									</li>
-									<li><code>s</code> Sharks - <code>Fs</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesHumanoids" class="DragonCodeArticle">
-						<h5>Humanoids</h5>
-						<p>Not just humans in this category.</p>
-						<p><em>Note:</em> Since it is so common for characters to be humanoid versions of other species, it's worth noting here that you can use <code>^</code> to combine species. See the <a href="#DragonCodeSpeciesMisc">Modifiers/Miscellaneous</a> section for details.</p>
-						<p><em>Note 2:</em> For unknown/anthropomorphic species, add a <code>?</code> modifier, e.g. <code>H?</code> indicates that you're uncertain which subgroup to specify. Actual humans just use a plain <code>H</code>.
-						<ul>
-							<li>An <code>H</code> means "I'm human(oid). Do I <em>really</em> need to tell you how many <em>heads</em> I have?"
-								<ul>
-									<li><code>a</code> Apes - <code>Ha</code></li>
-									<li><code>d</code> Dwarfs - <code>Hd</code></li>
-									<li><code>e</code> Elves - <code>He</code>
-										<ul>
-											<li><code>w</code> Wood elves - <code>Hew</code></li>
-										</ul>
-									</li>
-									<li><code>f</code> Fairies - <code>Hf</code></li>
-									<li><code>i</code> gIants - <code>Hi</code></li>
-									<li><code>g</code> Gnomes - <code>Hg</code></li>
-									<li><code>h</code> Hobbitses - <code>Hh</code></li>
-									<li><code>k</code> Kender - <code>Hk</code></li>
-									<li><code>t</code> Trolls - <code>Ht</code></li>
-									<li><code>w</code> Wolfmen (wolfwomen too 🐺) - <code>Hw</code></li>
-									<li><code>y</code> nYmphs - <code>Hy</code>
-										<ul>
-											<li><span class="ProposedDragonCodeChange">(proposed change)</span> <code>n</code> Nymphs - <code>Hn</code> Why don't we use an n for nymphs?</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesInsects" class="DragonCodeArticle">
-						<h5>Insects</h5>
-						<p>Arachnids, bugs, arthropods, ...</p>
-						<ul>
-							<li><code>I</code> means "I'm an insect, now buzz off!"
-								<ul>
-									<li><code>a</code> Ants - <code>Ia</code></li>
-									<li><code>b</code> Beetles - <code>Ib</code></li>
-									<li><code>f</code> Flies - <code>If</code></li>
-									<li><code>l</code> Locusts - <code>Il</code></li>
-									<li><code>m</code> Moths - <code>Im</code></li>
-									<li><code>u</code> bUtterflies - <code>Ib</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesLegends" class="DragonCodeArticle">
-						<h5>Legends</h5>
-						<p>Anything from recent (after the Dark Ages) stories. See <a href="#DragonCodeSpeciesMythical">Mythical</a> for species from pre-Dark Ages stories.</p>
-						<ul>
-							<li><code>L</code> means "What do you mean I'm not old enough to count as mythical? That's totally my real ID card!"
-								<ul>
-									<li><code>f</code> salamanders - <code>Lf</code>
-										<ul>
-											<li><span class="ProposedDragonCodeChange">(proposed change)</span> <code>a</code> sAlamanders - <code>La</code> I think it makes more sense to pick a letter that is actually in the word.</li>
-										</ul>
-									</li>
-									<li><code>g</code> Griffons (also spelled Gryphons) - <code>Lg</code></li>
-									<li><code>l</code> gremLins - <code>Ll</code></li>
-									<li><code>m</code> Merfolk - <code>Lm</code></li>
-									<li><code>n</code> maNticores - <code>Ln</code></li>
-									<li><code>r</code> gaRgoyles - <code>Lr</code></li>
-									<li><code>s</code> Sprites - <code>Ls</code></li>
-									<li><code>t</code> Treefolk (a.k.a. Treants) - <code>Lt</code></li>
-									<li><code>u</code> Unicorns - <code>Lu</code></li>
-								</ul>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesMammals" class="DragonCodeArticle">
-						<h5>Mammals</h5>
-						<p>Any animal fitting into the scientific classification Mammalia: they're warm-blooded, usually covered in fur, and they feed their young with milk.</p>
-						<ul>
-							<li><code>M</code> is for Mammal.
-								<ul>
-									<li><code>a</code> bAts - <code>Ma</code></li>
-									<li><code>b</code> Bears - <code>Mb</code></li>
-									<li><code>c</code> Canines - <code>Mc</code>
-										<ul>
-											<li><code>d</code> Domestic dogs - <code>Mcd</code></li>
-											<li><code>f</code> Foxes - <code>Mcf</code> Tell us, Mr./Mrs. fox, <a href="https://www.youtube.com/watch?v=jofNR_WkoCE" target="_blank">what does the fox say?</a></li>
-											<li><code>w</code> Wolves - <code>Mcw</code></li>
-										</ul>
-									</li>
-									<li><code>f</code> Felines - <code>Mf</code>
-										<ul>
-											<li><code>a</code> pAnthers - <code>Mfa</code></li>
-											<li><code>b</code> Black panthers - <code>Mfb</code></li>
-											<li><code>c</code> Cheetahs - <code>Mfc</code></li>
-											<li><code>d</code> Domestic cats - <code>Mfd</code></li>
-											<li><code>l</code> Lions - <code>Mfl</code></li>
-											<li><code>p</code> leoPards - <code>Mfp</code>
-												<ul>
-													<li><code>s</code> Snow leopards - <code>Mfps</code></li>
-												</ul>
-											</li>
-											<li><code>t</code> Tigers - <code>Mft</code></li>
-											<li><code>u</code> pUmas - <code>Mfu</code></li>
-											<li><code>x</code> lynXes - <code>Mfx</code></li>
-										</ul>
-									</li>
-									<li><code>h</code> Horses - <code>Mh</code></li>
-									<li><code>m</code> Monkeys - <code>Mm</code>
-										<ul>
-											<li><code>g</code> Gibbons - <code>Mmg</code></li>
-										</ul>
-									</li>
-									<li><code>p</code> Polecats - <code>Mp</code>
-										<ul>
-											<li><code>f</code> Ferrets - <code>Mpf</code></li>
-											<li><code>m</code> Mink - <code>Mpm</code></li>
-										</ul>
-									</li>
-									<li><code>r</code> Rodents - <code>Mr</code>
-										<ul>
-											<li><code>g</code> Gerbils - <code>Mrg</code></li>
-											<li><code>h</code> Hamsters - <code>Mrh</code></li>
-											<li><code>m</code> Mice - <code>Mrm</code></li>
-											<li><code>r</code> Rats - <code>Mrr</code></li>
-											<li><code>s</code> Squirrels - <code>Mrs</code></li>
-										</ul>
-									</li>
-									<li><code>w</code> Whales/cetaceans - <code>Mw</code>
-										<ul>
-											<li><code>d</code> Dolphins - <code>Mwd</code></li>
-											<li><code>k</code> Killer whales - <code>Mwk</code> Do we really want to refer to the entire species as 'killer'? Seems kinda racist to me.</li>
-											<li><code>p</code> Porpoises - <code>Mwp</code></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesMollusks" class="DragonCodeArticle">
-						<h5>mOllusks</h5>
-						<p>You've got a soft body, and probably a hard shell, and you're <a href="https://duckduckgo.com/?q=soft-body+robotics" target="_blank">not a robot</a>.</p>
-						<ul>
-							<li><code>O</code> mOllusks - <code>O</code> means "I carry my entire home on my back. Talk about strength!"
-								<ul>
-									<li><code>c</code> Cuttlefish - <code>Oc</code></li>
-									<li><code>l</code> Limpets - <code>Ol</code></li>
-									<li><code>o</code> Octopuses - <code>Oo</code></li>
-									<li><code>s</code> Snails - <code>Os</code></li>
-									<li><code>y</code> oYsters - <code>Oy</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesMythical" class="DragonCodeArticle">
-						<h5>mYthical</h5>
-						<p>Any species old enough to have existed in pre-Dark Ages myths.</p>
-						<ul>
-							<li><code>Y</code> means your species is from a time when the English word 'monster' meant a very knowledgable animal, the apex of natural wisdom and goodness. A time when being labeled a monster was an honor, not an insult.
-								<ul>
-									<li><code>c</code> Centaurs - <code>Yc</code></li>
-									<li><code>g</code> Golems - <code>Yg</code></li>
-									<li><code>h</code> Hellhounds - <code>Yh</code></li>
-									<li><code>m</code> Minotaurs - <code>Ym</code></li>
-									<li><code>p</code> Pegasi - <code>Yp</code></li>
-									<li><code>s</code> Sphinxes - <code>Ys</code></li>
-									<li><code>t</code> saTyrs - <code>Yt</code></li>
-									<li><code>y</code> cYclopses - <code>Yy</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesPlants" class="DragonCodeArticle">
-						<h5>Plants</h5>
-						<p>Species that have roots in the local landscape, unlikely to move away.</p>
-						<ul>
-							<li>A <code>P</code> means "I'm a plant. Now move, you're blocking the sunlight."
-								<ul>
-									<li><code>c</code> Cactuses - <code>Pc</code></li>
-									<li><code>f</code> Funguses - <code>Pf</code></li>
-									<li><code>t</code> Trees - <code>Pt</code>
-										<ul>
-											<li><code>a</code> Ash trees - <code>Pta</code></li>
-											<li><code>e</code> Elm trees - <code>Pte</code></li>
-											<li><code>o</code> Oak trees - <code>Pto</code></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesReptiles" class="DragonCodeArticle">
-						<h5>Reptiles</h5>
-						<p>Are you covered in scales? Do you feel energized after warming up in the sun? You might be a reptile.</p>
-						<ul>
-							<li>
-								<code>R</code> means "I'm a reptile, not 'a mean or grovelling person'."
-								<details>
-									<summary>(Wiktionary)</summary>
-									<p>reptile. (2017, February 19). Wiktionary, The Free Dictionary. Retrieved 23:30, March 2, 2017 from <a href="https://en.wiktionary.org/w/index.php?title=reptile&oldid=42274015" target="_blank">https://en.wiktionary.org/w/index.php?title=reptile&oldid=42274015</a>.</p>
-								</details>
-								
-								<ul>
-									<li><code>a</code> Alligators and crocodiles - <code>Ra</code></li>
-									<li><code>c</code> Chameleons - <code>Rc</code></li>
-									<li><code>g</code> Geckos - <code>Rg</code></li>
-									<li><code>k</code> Komodo dragons - <code>Rk</code></li>
-									<li><code>l</code> Lizards - <code>Rl</code></li>
-									<li><code>n</code> skiNks - <code>Rn</code>
-										<ul>
-											<li><code>f</code> Fire skinks - <code>Rnf</code></li>
-										</ul>
-									</li>
-									<li><code>s</code> Snakes - <code>Rs</code></li>
-									<li><code>t</code> Turtles - <code>Rt</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesSaurians" class="DragonCodeArticle">
-						<h5>Saurians</h5>
-						<p>Dinosaurs. The giant lizard beings that roamed the Earth so many eons ago.</p>
-						<ul>
-							<li>A lone <code>S</code> means "My species existed 65 million years ago (more or less), and we totally did not evolve into puny little chickens! I wouldn't be here if we had!"
-								<ul>
-									<li><code>a</code> Allosaurs - <code>Sa</code></li>
-									<li><code>c</code> triCeratops - <code>Sc</code></li>
-									<li><code>p</code> aPatosaurs - <code>Sp</code></li>
-									<li><code>s</code> Stegosaurs - <code>Ss</code></li>
-									<li><code>t</code> Tyrannosaurs - <code>St</code></li>
-									<li><code>v</code> Velociraptors - <code>Sv</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesShapeChangers" class="DragonCodeArticle">
-						<h5>Shape Changers</h5>
-						<p>To be honest, I'm not sure whether this should count as a species or a modifier. The official Dragon Code documentation has it listed as a species, so that's how it is here. Shape changers take the form(s) of other species.</p>
-						<p>A lone <code>~</code> identifies your species as shape changers. There are no subspecies in this version of the Dragon Code.</p>
-						<p>If you primarily identify as a shape changer, you put the <code>~</code> first and then list whatever species you take the form(s) of. On the other hand, if you primarily identify as some other species and you just happen to be able to chagne shape, put that other species first. For example, to say "I am a shape changer who usually takes the form of a fly", you would type <code>~If</code>. On the other hand, if you want to say "I am a fly who can change shape", you would type <code>If~</code>. Other Species tags can be appended after the <code>~</code>, separated by a forward slash (<code>/</code>), e.g. to say that you're a shape changer who shifts between eastern and western draconic forms, you could type <code>~Dw/De</code>.</p>
-					</article>
-					
-					<article id="DragonCodeSpeciesSpirits" class="DragonCodeArticle">
-						<h5>Spirits</h5>
-						<p>Not the kind that you drink, the kind that might take you to a bar and get you drunk.</p>
-						<ul>
-							<li>For some reason <code>Q</code> means you're a spirit. Quite quixotic.
-								<ul>
-									<li><code>a</code> Angels - <code>Qa</code></li>
-									<li><code>d</code> Devils and demons - <code>Qd</code></li>
-									<li><code>g</code> Ghosts - <code>Qg</code></li>
-									<li><code>i</code> Imps - <code>Qi</code></li>
-									<li><code>p</code> Poltergeists - <code>Qp</code></li>
-									<li><code>s</code> Specters - <code>Qs</code></li>
-									<li><code>w</code> Will-o-the-wisps - <code>Qw</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-					<article id="DragonCodeSpeciesUndead" class="DragonCodeArticle">
-						<h5>Undead</h5>
-						<p>Think about <em>this</em>: we're all undead if you consider pre-life as a form of death.</p>
-						<ul>
-							<li><code>U</code> means "I died, then I undied.". Which is somehow not the same as being born-again.
-								<ul>
-									<li><code>g</code> Ghouls - <code>Ug</code> How is this different from ghosts?</li>
-									<li><code>v</code> Vampires - <code>Uv</code></li>
-									<li><code>z</code> Zombies - <code>Uz</code></li>
-								</ul>
-							</li>
-						</ul>
-					</article>
-					
-				</article> <!--id="DragonCodeSpeciesTag"-->
+				</section> <!--actualDragonCode-->
 				
-				<article id="DragonCodeActivityIndexTag" class="DragonCodeArticle">
-					<h4>Activity Index</h4>
-					<p>This tag refers to your online activity, not your physical activity. See <a href="#DragonCodeWeightTonnageTag">Tonnage</a> if that's what you're looking for.</p>
-					<p>The following descriptions are rough guides.</p>
-					<ul>
-						<li><code>Ac+++!</code> I am a Borg. I am in the Matrix. I am never disconnected.</li>
-						<li><code>Ac+++</code> What is 'outside'? Is that the stuff I see through my window?</li>
-						<li><code>Ac++</code> I spend a reasonable amount of time online (and by 'reasonable' I mean '<strong>absolutely</strong> no less than 8 hours per day')</li>
-						<li><code>Ac+</code> I spend a reasonable amount of time online (and by 'reasonable' I mean 'a couple of hours a day')</li>
-						<li><code>Ac</code> I get online every day long enough to check my email.</li>
-						<li><code>Ac-</code> I'm Here maybe twice a week.</li>
-						<li><code>Ac--</code> I get online maybe once every one or two weeks.</li>
-						<li><code>Ac---</code> I've been online before.</li>
-						<li><code>Ac---!</code> I almost got online once, when a friend tried to walk me through it...</li>
-						<li><code>Ac~</code> Variable, but I'm in control. I go online whenever I want.</li>
-						<li><code>Ac?</code> Variable, and Real Life is in control. I don't know when I'll get online.</li>
-					</ul>
-					
-					<p>This tag is brought to you by the letter <code>c</code>. If there's no <code>c</code>, it's not an Activity Index tag. Be careful - you don't want to accidentally lie about your <a href="#DragonCodeAgeTag">age (<code>A</code>)</a>... or do you?</p>
-				</article>
-				
-				<article id="DragonCodeAgeTag" class="DragonCodeArticle">
-					<h4>Age</h4>
-					<p>How old am I? As old as my toes and older than my whiskers.</p>
-					<ul>
-						<li><code>A+++!</code> Ancient</li>
-						<li><code>A+++</code> Almost ancient</li>
-						<li><code>A++</code> Old enough to not reveal your true age</li>
-						<li><code>A+</code> You've been around a while</li>
-						<li><code>A</code> Adult</li>
-						<li><code>A-</code> Young adult</li>
-						<li><code>A--</code> Older child</li>
-						<li><code>A---</code> Just hatched</li>
-						<li><code>A---!</code> Not even hatched yet!</li>
-						<li><code>A?</code> No idea. Not all cultures bother to measure age.</li>
-					</ul>
-					<h5>Modifiers:</h5>
-					<ul>
-						<li><code>r</code> Indicates that this Age tag specifies your Real Life age. Put this after the <code>A</code>, e.g. <code>Ar+++!</code> means you are truly ancient.</li>
-						<li><code>v</code> Indicates that this Age tag specifies your Virtual Life age. Put this after the <code>A</code>, e.g. <code>Av---</code> means that your online self is very young.</li>
-						<li><code>()</code> While you may choose to put your Real Life and Virtual Life ages as separate tags, you can also group them into a single Age tag using parentheses: <code>A(r-v+)</code>, for example, indicates that your Real Life self is a young adult while your virtual self is a bit older. This is equivalent to <code>Ar- Av+</code>.
-					</ul>
-				</article>
-				
-				<article id="DragonCodeAppendagesTag" class="DragonCodeArticle">
-					<h4>aPpendages</h4>
-					<p>This tag specifies how many and what types of limbs you have. As with all tags, you can choose not to include this tag if you have the 'normal' set of appendages. Note that most of these appendages come in pairs; see the modifiers below if you want to specify an unusual number of them.</p>
-					<ul>
-						<li><code>a</code> a pair of Arms - <code>Pa</code></li>
-						<li><code>f</code> a pair of Fore-limbs (limbs that can be used as either arms or legs) - <code>Pf</code></li>
-						<li><code>h</code> a Head - <code>Ph</code></li>
-						<li><code>k</code> a crest; may or may not be head ornamentation. - <code>Pk</code></li>
-						<li><code>l</code> a pair of Legs - <code>Pl</code></li>
-						<li><code>p</code> a pair of Paddles, flukes, fins, etc. - <code>Pp</code></li>
-						<li><code>t</code> a Tail - <code>Pt</code></li>
-						<li><code>v</code> a pair of spines or horns on the head - <code>Pv</code></li>
-						<li><code>w</code> a pair of Wings - <code>Pw</code>
-							<ul>
-								<li><code>'</code> a pair of Wings that also act as arms and/or legs - <code>Pw'</code></li>
-							</ul>
-						</li>
-					</ul>
-					<h5>Modifiers:</h5>
-					<ul>
-						<li><code>^</code> means the appendage has a webbed hand or foot.</li>
-						<li><code>+</code> One more than the amount specified above.</li>
-						<li><code>-</code> One less than the amount specified above.</li>
-						<li><code>!</code> Many. An unspecified large number.</li>
-						<li><code>number</code> Multiplier. You have this many times the amount (pair or single) specified above.</li>
-						<li><code>~</code> Variable. You grow limbs as needed.</li>
-					</ul>
-					
-					<p>You can combine as many of the above options as you want. E.g. an octopus with a missing leg would use the tag <code>Pl3l-</code>: <code>l3</code> means you have 3 pairs of legs, and <code>l-</code> means add another pair but subtract 1, bringing the total number of legs to 7. A common western dragon might use the tag <code>Phfwlt</code>, indicating that they have a head, a pair of forelimbs, a pair of wings, a pair of legs, and a tail. Or said dragon might not include this tag at all since that is a very common set of limbs for dragons.</p>
-				</article>
-				
-				<article id="DragonCodeSoftware" class="DragonCodeArticle">
+				<section id="DragonCodeSoftware" class="DragonCodeSection">
 					<h4>Software</h4>
 					<p>General warning: <a href="http://www.catb.org/jargon/html/A/All-hardware-sucks--all-software-sucks-.html" target="_blank">All hardware sucks, all software sucks.</a> Don't blame me if the software screws up your computer, or if your computer screws up the software, or if some combination of the two causes demons to fly out of your nose.</p>
 					
-					<h5>Generators</h5>
-					<p>Nothing to see here yet.</p>
+					<article id="DragonCodeGenerators" class="DragonCodeArticle">
+						<h5>Generators</h5>
+						<p>Nothing to see here yet.</p>
+					</article>
 					
-					<h5>Interpreters</h5>
-					<p>There's an interpreter hosted at Dragons Valley. <a href="http://www.dragons-valley.com/modules.php?name=Downloads&d_op=viewdownload&cid=10" target="_blank">Here</a> is the download page.</p>
-					<p>I'm also working on one of my own: <a href="https://github.com/TheOpenSourceNinja/PyDC" target="_blank">PyDC</a>. It's the real reason I'm rewriting all this Dragon Code documentation.</p>
-				</article>
+					<article id="DragonCodeInterpreters" class="DragonCodeArticle">
+						<h5>Interpreters</h5>
+						<p>There's an interpreter hosted at Dragons Valley. <a href="http://www.dragons-valley.com/modules.php?name=Downloads&d_op=viewdownload&cid=10" target="_blank">Here</a> is the download page.</p>
+						<p>I'm also working on one of my own: <a href="https://github.com/TheOpenSourceNinja/PyDC" target="_blank">PyDC</a>. It's the real reason I'm rewriting all this Dragon Code documentation.</p>
+					</article>
+				</section>
 				
-			</section> <!--actualDragonCode-->
+			</section> <!--actualDocumentation-->
 			
 		</main>
 		<!--# include file="footer.html" -->
