@@ -60,7 +60,7 @@
 									<li><a href="#DragonCodeAgeTag">Age (<code>A</code>)</a></li>
 									<li><a href="#DragonCodeAppendagesTag">aPpendages (<code>P</code>)</a></li>
 									<li><a href="#DragonCodeBreathWeaponTag">Breath weapon (<code>B</code>)</a></li>
-									<li>Color(s) (<code>C</code>)</li>
+									<li><a href="#DragonCodeColorsTag">Color(s) (<code>C</code>)</a></li>
 									<li>Dragon Friendliness (<code>Df</code>)</li>
 									<li>Emotionality/huggability (<code>E</code>)</li>
 									<li>Food (<code>F</code>)</li>
@@ -103,6 +103,23 @@
 						<p>Every tag is optional except for the version identifier. Readers have to know what code this is, after all.</p>
 						
 						<p>As I'm creating this page, I'm noticing things that I think should be changed. My proposed changes are marked <span class="ProposedDragonCodeChange">(proposed)</span>. I don't think these changes will be enough to warrant creating a version 3 of the Dragon Code, but they may break compatibility with existing software written for version 2.</p>
+						
+						<p>One thing I think is worth adding: Parentheses. <code>()</code> <span class="ProposedDragonCodeChange">(proposed)</span> Used for grouping multiple tags of the same type (e.g. multiple Species or Color tags), just like parentheses can be used in mathematical expressions to group sub-expressions. Use in combination with the other modifiers when things could get confusing. Put tags inside the parentheses. For example:
+						<ul>
+							<li>In math,
+								<ul>
+									<li><code>(1+2)×3</code> means to add 1 and 2 before multiplying the result by 3.</li>
+									<li>whereas <code>1+(2×3)</code> or <code>1+2×3</code> means to first multiply 2 and 3, then add 1 to the result.</li>
+								</ul>
+							</li>
+							<li>In DC2,
+								<ul>
+									<li><code>(Dw+De)[H]</code> means you're really a mix of eastern and western dragons, but you're in the form of a human.</li>
+									<li><code>Dw+(De[H])</code> or <code>Dw+De[H]</code> means you're really a mix of eastern and western dragons, and the eastern dragon is/was in the form of a human.</li>
+									<li><code>C(bk|re)^</code> means you have black and red stripes, and both are metallic.</li>
+								</ul>
+							</li>
+						</ul>
 					</article>
 					
 					<article id="DragonCodeVersion" class="DragonCodeArticle">
@@ -160,20 +177,10 @@
 								</li>
 								
 								<li>
-									<code>()</code> <span class="ProposedDragonCodeChange">(proposed)</span> Used for grouping Species tags, just like parentheses can be used in mathematical expressions to group sub-expressions. Use in combination with the other modifiers when things could get confusing. Put a Species tag inside the parentheses. For example:
+									<code>()</code> <span class="ProposedDragonCodeChange">(proposed)</span> Used for grouping, e.g.:
 									<ul>
-										<li>In math,
-											<ul>
-												<li><code>(1+2)×3</code> means to add 1 and 2 before multiplying the result by 3.</li>
-												<li>whereas <code>1+(2×3)</code> or <code>1+2×3</code> means to first multiply 2 and 3, then add 1 to the result.</li>
-											</ul>
-										</li>
-										<li>In DC2,
-											<ul>
-												<li><code>(Dw+De)[H]</code> means you're really a mix of eastern and western dragons, but you're in the form of a human.</li>
-												<li><code>Dw+(De[H])</code> or <code>Dw+De[H]</code> means you're really a mix of eastern and western dragons, and the eastern dragon is/was in the form of a human.</li>
-											</ul>
-										</li>
+										<li><code>(Dw+De)[H]</code> means you're really a mix of eastern and western dragons, but you're in the form of a human.</li>
+										<li><code>Dw+(De[H])</code> or <code>Dw+De[H]</code> means you're really a mix of eastern and western dragons, and the eastern dragon is/was in the form of a human.</li>
 									</ul>
 								</li>
 							</ul>
@@ -689,6 +696,91 @@
 							<li><code>zz</code> electricity (ZZap!) - <code>Bzz</code></li>
 							<li><code>-</code> none - <code>B-</code>. Equivalent to <code>B"none"</code></li>
 						</ul>
+					</article>
+					
+					<article id="DragonCodeColorsTag" class="DragonCodeArticle">
+						<h4>Colors (C)</h4>
+						<p>Whoah, this tag has a lot of modifiers! One might even say this tag is very <details><summary><dfn>colorful</dfn>.</summary>"Interesting, multifaceted, energetic, distinctive"<br><cite><details><summary>(Wiktionary)</summary>colorful. (2017, February 12). Wiktionary, The Free Dictionary. Retrieved 00:38, March 27, 2017 from <a href="https://en.wiktionary.org/w/index.php?title=colorful&oldid=42235833" target="_blank">https://en.wiktionary.org/w/index.php?title=colorful&oldid=42235833</a>.</details></cite></details></p>
+						<p>If you have a color that is not listed here, you can put it in quotes: <code>C&quot;periwinkle&quot;</code> for example.</p>
+						<ul>
+							<li><code>ag</code> silver (ArGent) - <code>Cag</code></li>
+							<li><code>am</code> AMber - <code>Cam</code></li>
+							<li><code>aq</code> AQuamarine - <code>Caq</code></li>
+							<li><code>au</code> gold (AUrum) - <code>Cau</code></li>
+							<li><code>bk</code> BlacK - <code>Cbk</code></li>
+							<li><code>bl</code> BLue - <code>Cbl</code></li>
+							<li><code>br</code> BRown - <code>Cbr</code></li>
+							<li><code>bs</code> BraSs - <code>Cbs</code></li>
+							<li><code>bz</code> BronZe - <code>Cbz</code></li>
+							<li><code>ch</code> CHromium - <code>Cch</code></li>
+							<li><code>cu</code> copper (CUprum) - <code>Ccu</code></li>
+							<li><code>cy</code> CYan - <code>Ccy</code></li>
+							<li><code>eb</code> EBony - <code>Ceb</code></li>
+							<li><code>fs</code> FleSh (Human) - <code>Cfs</code></li>
+							<li><code>gr</code> GReen - <code>Cgr</code></li>
+							<li><code>gy</code> GraY - <code>Cgy</code></li>
+							<li><code>hg</code> quicksilver (HydrarGyrum) - <code>Chg</code></li>
+							<li><code>in</code> INdigo - <code>Cin</code></li>
+							<li><code>iv</code> IVory - <code>Civ</code></li>
+							<li><code>ja</code> JAde - <code>Cja</code></li>
+							<li><code>ma</code> MAgenta - <code>Cma</code></li>
+							<li><code>mv</code> MauVe - <code>Cmv</code></li>
+							<li><code>or</code> ORange - <code>Cor</code></li>
+							<li><code>pi</code> PInk - <code>Cpi</code></li>
+							<li><code>pu</code> PUrple - <code>Cpu</code> <small>My computer could use a faster CPU.</small></li>
+							<li><code>rb</code> RainBow - <code>Crb</code> <small>Have you met my friend Roy G. Biv?</small></li>
+							<li><code>re</code> REd - <code>Cre</code></li>
+							<li><code>ta</code> TAn - <code>Cta</code></li>
+							<li><code>tu</code> TUrquoise - <code>Ctu</code></li>
+							<li><code>mb</code> uMBer - <code>Cmb</code></li>
+							<li><code>vi</code> VIolet - <code>Cvi</code></li>
+							<li><code>wh</code> WHite - <code>Cwh</code></li>
+							<li><code>ye</code> YEllow - <code>Cye</code></li>
+							<li><code>~</code> Variable. Like all uses of ~. - <code>C~</code></li>
+							<li><code>?</code> unknown - <code>C?</code></li>
+							<li><code><!--This space intentionally left blank--></code> colorless - <code>C</code></li>
+						</ul>
+						
+						<h5>Modifiers</h5>
+						<p>All of these modifiers are put after the color:</p>
+						<ul>
+							<li><code>+</code> The more <code>+</code>s, the lighter the color. Example: <code>Cgr+</code> means light green, <code>Cgr++</code> means very light green, and so on.</li>
+							<li><code>-</code> The more <code>-</code>s, the darker the color.</li>
+							<li><code>^</code> Metallic. Example: <code>Crb^</code> means metallic rainbow.</li>
+							<li><code>_</code> Transparent, glassy, or gemstone. Put after the color. Example: <code>Cbk_</code> would be very hard to see at night, as it represents transparent black.</li>
+							<li><code>'</code> Luminescent. For example, <code>Cre'</code> might be described as a fiery red glow.</li>
+							<li><code>%</code> Pearlescent.</li>
+							<li><code>!</code> Glittery or sparkly.</li>
+						</ul>
+						
+						<h5>Combining modifiers</h5>
+						<p>Put between two colors, after the modifiers that only affect the first color. If you have a primary color, make it the first one:</p>
+						<ul>
+							<li><code>|</code> This indicates that you have stripes. E.g. a tiger might use the code <code>Cor|bk</code>: orange with black stripes.</li>
+							<li><code>=</code> Bands. <code>Cbl+=wh</code> means light blue with white bands.</li>
+							<li><code>:</code> Spots. A leopard might use the code <code>Cor+:bk</code> since they have light orange fur with black spots.</li>
+							<li><code>*</code> Stars. A dragon who blends in against the night sky might use <code>Cbk*gy</code>: Black with gray star shapes.</li>
+							<li><code>@</code> Mottled. <code>Cwh@ye</code> is white mottled with yellow.</li>
+							<li><code>\</code> Iridescence, meaning that another color shows under certain lighting conditions or viewing angles.</li>
+							<li><code>/</code> Mix. This indicates that you are a random mix of colors: e.g. <code>Cbz/br/bs</code> <span class="ProposedDragonCodeChange">(the same as <code>Cbz/(br/bs)</code>)</span> means you're a random mix of bronze and brown &amp; brass.</li>
+							<li><code>#</code> Plaid. <code>Cgr#re</code> is green plaid with red overlays.</li>
+							<li><code>&amp;</code> Patterned. <code>Cwh&amp;bl</code> means white patterned with blue.
+								<ul>
+									<li><code>1</code> Marble patterned. <code>Cre-&amp;1bk&amp;gy</code> <span class="ProposedDragonCodeChange">(the same as <code>Cre-&amp;1(bk&amp;gy)</code>)</span> means dark red marble with black and gray veins.</code></li>
+								</ul>
+							</li>
+							<li><code>></code> In transition. <span class="ProposedDragonCodeChange">(My interpretation: gradient, not some kind of animation).</span> "For those who are changing from one colo<s>u</s>r to another.". For example, <code>Cbk>wh</code> means a transition from black to white.</li>
+							<li><code>,&lt;appendage&gt;</code> If an appendage is different from your main coloration, append it here. See <a href="#DragonCodeAppendagesTag">aPpendages</a> for a list of appendages. Example: An orange-colored cat with white legs might use the code <code>Cor,lwh</code>.
+								<ul>
+									<li>
+										<span class="ProposedDragonCodeChange">Proposed interpretation</span>: Only the Appendages tag specifies how many of each limb you have. If an appendage is listed only once in the Color tag, its color applies to all appendages of that type. If an appendage is listed more than once, each color listed applies to the corresponding part of the Appendages tag (e.g. an orange cat with two orange legs and two white legs would use the color tag <code>Cor,lor,lwh</code> and the Appendages tag <code>Phllt</code>)
+									</li>
+								</ul>
+						</ul>
+						
+						<p><span class="ProposedDragonCodeChange">(proposed clarification):</span> There is some potential for misinterpretation if you have more than two colors. I choose to interpret this like so: <code>Chg|au*ag</code> is the same as <code>Chg|(au*ag)</code>, meaning that you are mercury-colored with stripes. Inside those stripes you have silver stars on a gold background. This is why I propose the addition of parentheses to the Dragon Code:</p>
+						
+						<p><span class="ProposedDragonCodeChange">Proposed addition:</span> I've already mentioned elsewhere my proposal to add parentheses for grouping; this is one tag where grouping might be useful: if a modifier applies to two or more colors, you can put those colors (combined using the above modifiers) inside parentheses and then put the modifier(s) which apply to all of them after the parentheses, e.g. <code>C(rb|wh)%</code> would indicate that you have white and rainbow stripes, and that both colors are pearlescent.</p>
 					</article>
 				</section> <!--actualDragonCode-->
 				
